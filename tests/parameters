@@ -1,0 +1,18 @@
+################################################################################
+#
+# This is the parameters file for your tests. If any of these are left blank,
+# you will be prompted for a value when you run that test.
+#
+# There must be no space between the = and your value.
+#
+# It is advisable to make a copy of this file once you have put your values
+# into it (if you pull this repository from GitHub again, your changes
+# will be lost).
+#
+
+export FB_LINK_EMAIL_ADDRESS=roytesterton.2@gmail.com
+export FB_USERNAME=roytesterton.1@gmail.com
+export FB_PASSWORD=test123x
+
+export YOUR_CONTINENT=Europe
+export YOUR_CITY=Madrid
