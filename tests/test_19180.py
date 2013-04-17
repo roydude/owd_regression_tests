@@ -64,7 +64,7 @@ class test_19180(GaiaTestCase):
         #
         # View the contact details.
         #
-        self.contacts.viewContact(self.Contact_1)
+        self.contacts.viewContact(self.Contact_1['name'])
         
         #
         # Press the link button.
@@ -85,4 +85,4 @@ class test_19180(GaiaTestCase):
         #
         # Verify that we're now linked.
         #
-        self.contacts.verifyLinked(self.Contact_1, fb_email)
+        self.contacts.verifyLinked(self.Contact_1['name'], fb_email)

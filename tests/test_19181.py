@@ -58,7 +58,7 @@ class test_19181(GaiaTestCase):
         #
         # View our contact.
         #
-        self.contacts.viewContact(self.Contact_1)
+        self.contacts.viewContact(self.Contact_1['name'])
         
         #
         # Edit our contact.

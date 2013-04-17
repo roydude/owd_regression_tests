@@ -56,7 +56,7 @@ class test_19182(GaiaTestCase):
         #
         # Change the name to "aaaaabbbbbccccaaaa"
         #
-        self.contacts.changeVal(self.Contact_1, "givenName", self.newGivenName)
+        self.contacts.changeVal(self.Contact_1['name'], "givenName", self.newGivenName)
 
         #
         # Search for our new contact.
