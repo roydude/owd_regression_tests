@@ -10,10 +10,9 @@ from OWDTestToolkit import *
 # Imports particular to this test case.
 #
 from tests.mock_data.contacts import MockContacts
-import time
 
-class test_19182(GaiaTestCase):
-    _Description = "[CONTACTS] Search a contact after edit contact name."
+class test_19422(GaiaTestCase):
+    _Description = "[BASIC][CONTACTS] Edit a contact changing the name and the phone number - verify that the values modified in the contact appear when viewing the updated contact."
 
     def setUp(self):
         #
@@ -22,7 +21,6 @@ class test_19182(GaiaTestCase):
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
         self.contacts   = AppContacts(self)
-        self.settings   = AppSettings(self)
                 
         #
         # Set timeout for element searches.
@@ -35,14 +33,12 @@ class test_19182(GaiaTestCase):
         #
         self.Contact_1 = MockContacts().Contact_1
         self.Contact_2 = MockContacts().Contact_2
+
+        #
+        # We're not testing adding a contact, so just stick one 
+        # into the database.
+        #
         self.data_layer.insert_contact(self.Contact_1)
-        self.data_layer.insert_contact(self.Contact_2)
-        self.newGivenName = "aaaaabbbbbccccaaaa"
-        
-        #
-        # Set up to use data connection.
-        #
-        self.settings.turn_dataConn_on_if_required()
         
     def tearDown(self):
         self.UTILS.reportResults()
@@ -54,22 +50,19 @@ class test_19182(GaiaTestCase):
         self.contacts.launch()
         
         #
-        # Change the name to "aaaaabbbbbccccaaaa"
+        # Edit the contact with the new details.
         #
-        self.contacts.changeVal(self.Contact_1, "givenName", self.newGivenName)
+        self.contacts.editContact(self.Contact_1, self.Contact_2)
+        
+        #
+        # TEST: The 'view contact' page shows the correct details for this new contact.
+        #
+        self.contacts.checkViewContactDetails(self.Contact_2)         
+        
+        #
+        # TEST: The 'edit contact' page shows the correct details for this new contact.
+        #
+        self.contacts.checkEditContactDetails(self.Contact_2) 
 
-        #
-        # Search for our new contact.
-        #
-        self.contacts.search("aaa")
-        
-        #
-        # Verify our contact is listed.
-        #
-        self.contacts.checkSearchResults(self.newGivenName, True)
-        
-        #
-        # Verify the other contact is NOT listed.
-        #
-        self.contacts.checkSearchResults(self.Contact_2["givenName"], False)
+  
         

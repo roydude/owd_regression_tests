@@ -12,8 +12,8 @@ from OWDTestToolkit import *
 from tests.mock_data.contacts import MockContacts
 import time
 
-class test_19182(GaiaTestCase):
-    _Description = "[CONTACTS] Search a contact after edit contact name."
+class test_19192(GaiaTestCase):
+    _Description = "[CONTACTS] Search by text string that not matches with any contact name/last name."
 
     def setUp(self):
         #
@@ -22,7 +22,6 @@ class test_19182(GaiaTestCase):
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
         self.contacts   = AppContacts(self)
-        self.settings   = AppSettings(self)
                 
         #
         # Set timeout for element searches.
@@ -37,12 +36,6 @@ class test_19182(GaiaTestCase):
         self.Contact_2 = MockContacts().Contact_2
         self.data_layer.insert_contact(self.Contact_1)
         self.data_layer.insert_contact(self.Contact_2)
-        self.newGivenName = "aaaaabbbbbccccaaaa"
-        
-        #
-        # Set up to use data connection.
-        #
-        self.settings.turn_dataConn_on_if_required()
         
     def tearDown(self):
         self.UTILS.reportResults()
@@ -53,20 +46,22 @@ class test_19182(GaiaTestCase):
         #
         self.contacts.launch()
         
-        #
-        # Change the name to "aaaaabbbbbccccaaaa"
-        #
-        self.contacts.changeVal(self.Contact_1, "givenName", self.newGivenName)
+#         x = self.UTILS.getElement(DOM.Contacts.search_field, "Search field")
+#         self.marionette.tap(x)
+#         self.keyboard.send("A")
+#         self.marionette.switch_to_frame()
+#         self.UTILS.switchToFrame(*DOM.Contacts.frame_locator)
+#         return
 
         #
         # Search for our new contact.
         #
-        self.contacts.search("aaa")
+        self.contacts.search("XXXX")
         
         #
         # Verify our contact is listed.
         #
-        self.contacts.checkSearchResults(self.newGivenName, True)
+        self.contacts.checkSearchResults(self.Contact_1["givenName"], False)
         
         #
         # Verify the other contact is NOT listed.

@@ -16,3 +16,5 @@ export FB_PASSWORD=test123x
 
 export YOUR_CONTINENT=Europe
 export YOUR_CITY=Madrid
+
+export TEST_SMS_NUM_19190=610504137

@@ -13,7 +13,7 @@ from tests.mock_data.contacts import MockContacts
 import time
 
 class test_19180(GaiaTestCase):
-    _Description = "Unlink all Facebook contacts in the address book in a single step and verify the contacts who was linked to a facebook contacts."
+    _Description = "[FACEBOOK] Unlink all Facebook contacts in the address book in a single step and verify the contacts who was linked to a facebook contacts."
 
     def setUp(self):
         #
