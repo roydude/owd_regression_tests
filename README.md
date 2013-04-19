@@ -54,6 +54,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19231</td><td  align=left>[HOME SCREEN] Verify that the user can uninstall a everything.me app through the grid edit mode.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19246</td><td  align=left>[CAMERA] Go to Gallery from Camera.</td>
   </tr>
 

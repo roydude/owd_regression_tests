@@ -37,10 +37,7 @@ class test_19180(GaiaTestCase):
         self.Contact_1 = MockContacts().Contact_1
         self.data_layer.insert_contact(self.Contact_1)
         
-        #
-        # Set up to use data connection.
-        #
-        self.settings.turn_dataConn_on_if_required()
+        self.connect_to_network()
         
     def tearDown(self):
         self.UTILS.reportResults()

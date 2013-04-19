@@ -44,7 +44,7 @@ class test_19418(GaiaTestCase):
         #
         # Open the gallery application.
         #
-#         self.UTILS.goHome()
+        self.UTILS.goHome()
         self.gallery.launch()
 
         #
