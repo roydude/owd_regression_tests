@@ -63,8 +63,7 @@ class main():
         #
         # Make sure we have some data connectivity.
         #
-        p_parent.data_layer.enable_wifi()
-        self.settings.turn_dataConn_on_if_required()
+        self.connect_to_network()
         
     def run(self):
 

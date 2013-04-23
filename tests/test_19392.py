@@ -44,8 +44,7 @@ class test_19392(GaiaTestCase):
         #
         # Set up to use data connection.
         #
-        self.data_layer.disable_wifi()
-        self.settings.turn_dataConn_on_if_required()
+        self.connect_to_network()
         
     def tearDown(self):
         self.UTILS.reportResults()

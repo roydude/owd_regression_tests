@@ -40,7 +40,7 @@ class test_19400(GaiaTestCase):
         #
         self.UTILS.logComment("Not disabling wifi currently.")
 #        self.data_layer.disable_wifi()
-        self.Settings.turn_dataConn_on_if_required()
+        self.connect_to_network()
         
     def tearDown(self):
         self.UTILS.reportResults()
