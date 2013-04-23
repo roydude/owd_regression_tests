@@ -37,9 +37,14 @@ class test_19181(GaiaTestCase):
         self.data_layer.insert_contact(self.Contact_1)
         self.UTILS.addFileToDevice('./tests/resources/contact_face.jpg', destination='DCIM/100MZLLA')
           
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
         #
         # Launch contacts app.
         #
+        self.UTILS.logResult("info", "Setting up contact ...")
         self.contacts.launch()
           
         #
@@ -56,11 +61,9 @@ class test_19181(GaiaTestCase):
         # Give our contact a photo.
         #
         self.contacts.addGalleryImageToContact(0)
-
-    def tearDown(self):
-        self.UTILS.reportResults()
         
-    def test_run(self):
+        self.UTILS.logResult("info", "Starting tests ...")
+        
         self.UTILS.logResult("info", "*** Switching 'reset' mode ON ... ***")
         self.toggle_reset_button("phone")
         self.check_kbd_appears("number", "phone number", False)

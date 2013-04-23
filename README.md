@@ -54,6 +54,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19205</td><td  align=left>[SMS] Send a new SMS by entering manually the phone number.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19231</td><td  align=left>[HOME SCREEN] Verify that the user can uninstall a everything.me app through the grid edit mode.</td>
   </tr>
 
@@ -62,7 +66,63 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19392</td><td  align=left>[BASIC][FACEBOOK] Import Facebook contacts from contacts app settings.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19393</td><td  align=left>[BASIC][EVERYTHING.ME] Install and launch an everything.me app - verify the everything.me app launches successfully to the right web content.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19397</td><td  align=left>[BASIC][CLOCK] Add an alarm - verify the alarm was added with the correct date and time.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19398</td><td  align=left>[BASIC][CALENDAR] Add and view an event to an offline calendar in each calendar view - verify the event is shown on each calendar view with the correct title, location, and event time length.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19400</td><td  align=left>[BASIC][HOMESCREEN] Delete a packaged app - verify the app was successfully removed from the homescreen.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19401</td><td  align=left>[BASIC][HOMESCREEN] Launch a packaged app - verify the app launches successfully to the correct content.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19403</td><td  align=left>[BASIC][SYSTEM] With two apps already running, launch the card view, kill one app process, and launch the other - verify the app killed is stopped and the other app starts up.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19405and19406</td><td  align=left>[BASIC][EMAIL] Send and receive email with gmail.com.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19407and19408</td><td  align=left>[BASIC][EMAIL] Send and receive email with hotmail.com.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19409</td><td  align=left>[BASIC][HOMESCREEN] Launch market installed hosted app - verify the app is launched successfully from the homescreen.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19410</td><td  align=left>[BASIC][APP INSTALL] Install a market installed hosted app - verify the app is installed with the right icon.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19413</td><td  align=left>[BASIC][BROWSER] Load a website via Cellular Data - verify the site loads in the browser correctly.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19414</td><td  align=left>[BASIC][BROWSER] Load a website via Wifi - verify the site loads in the browser correctly.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19416</td><td  align=left>[BASIC][GALLERY] Browse photos in gallery - verify you can see each picture of your sdcard.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19417</td><td  align=left>[BASIC][VIDEO] Play the video you recorded, check for video and sound to verify the video could be successfully played.</td>
   </tr>
 
   <tr>

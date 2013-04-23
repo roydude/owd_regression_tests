@@ -42,7 +42,7 @@ class test_19182(GaiaTestCase):
         #
         # Set up to use data connection.
         #
-        self.settings.turn_dataConn_on_if_required()
+#         self.settings.turn_dataConn_on_if_required()
         
     def tearDown(self):
         self.UTILS.reportResults()
