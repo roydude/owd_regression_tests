@@ -66,7 +66,7 @@ class main():
         # Make sure we have some data connectivity.
         #
         self.settings.getNetworkConnection()
-        return
+        
         ##################################################
         #
         # SEND EMAIL
