@@ -60,13 +60,13 @@ class main():
         self.marionette.set_search_timeout(50)
         p_parent.lockscreen.unlock()
         
+    def run(self):
+
         #
         # Make sure we have some data connectivity.
         #
         self.settings.getNetworkConnection()
-        
-    def run(self):
-
+        return
         ##################################################
         #
         # SEND EMAIL

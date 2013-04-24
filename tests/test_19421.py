@@ -96,7 +96,7 @@ class test_19421(GaiaTestCase):
         #
         # Wait for the last message in this thread to be a 'recieved' one.
         #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread(180)
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
         self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
         
         #
