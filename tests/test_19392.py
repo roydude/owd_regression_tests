@@ -59,8 +59,8 @@ class test_19392(GaiaTestCase):
         # Enable facebook and log in.
         #
         self.contacts.enableFBImport()
-        fb_user = self.UTILS.get_os_variable("19392_FB_USERNAME")
-        fb_pass = self.UTILS.get_os_variable("19392_FB_PASSWORD")
+        fb_user = self.UTILS.get_os_variable("T19392_FB_USERNAME")
+        fb_pass = self.UTILS.get_os_variable("T19392_FB_PASSWORD")
         self.facebook.login(fb_user, fb_pass)
         
         #
