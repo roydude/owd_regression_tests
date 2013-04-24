@@ -63,7 +63,7 @@ class main():
         #
         # Make sure we have some data connectivity.
         #
-        self.connect_to_network()
+        self.settings.getNetworkConnection()
         
     def run(self):
 

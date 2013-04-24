@@ -37,8 +37,12 @@ class test_19405and19406(GaiaTestCase):
         self.UTILS.logComment("Using password 2 '" + self.PASS2 + "'")
         self.UTILS.logComment("Using email    2 '" + self.EMAIL2 + "'")
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
         self.EMAIL  = EMAIL_SEND_AND_RECEIVE.main(self, 
-                                                  "24 and 25",
+                                                  "19405 and 19406",
                                                   "Sent Mail",
                                                   self.EMAIL1,
                                                   self.USER1,
@@ -47,8 +51,4 @@ class test_19405and19406(GaiaTestCase):
                                                   self.USER2,
                                                   self.PASS2)
 
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         self.EMAIL.run()
