@@ -71,7 +71,7 @@ class test_19180(GaiaTestCase):
         #
         # Select the contact to link.
         #
-        fb_email = self.UTILS.get_os_variable("19180_FB_LINK_EMAIL_ADDRESS")
+        fb_email = self.UTILS.get_os_variable("T19180_FB_LINK_EMAIL_ADDRESS")
         self.facebook.LinkContact(fb_email)
         
         #
