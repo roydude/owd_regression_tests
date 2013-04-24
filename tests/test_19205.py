@@ -55,26 +55,21 @@ class test_19205(GaiaTestCase):
         self.messages.createAndSendSMS(self.target_telNum, self._TestMsg)
         
         #
-        # Go home and wait for the notification.
+        # Wait for the last message in this thread to be a 'recieved' one.
         #
-        self.UTILS.goHome()
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread(180)
+        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
         
         #
-        # Wait 3 mins for the notification to appear in the utility / noification / status bar (has too many names!).
-        # Then open the bar and click on the new message notification.
+        # TEST: The returned message is as expected (caseless in case user typed it manually).
         #
-        x = self.messages.waitForSMSNotifier(self.target_telNum, 180)
-        self.UTILS.TEST(x, "Found new msg.", True)
-        
-        self.messages.clickSMSNotifier(self.target_telNum)
+        sms_text = returnedSMS.text
+        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
+            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
 
         #
-        # Switch focus to the sms app and read the latest message.
+        # The message notifier returned by the weird 'you have sent a text' text
+        # remains in the header unless we clear it.
         #
-        returnedSMS = self.messages.readLastSMSInThread()
-        
-        #
-        # TEST: The returned message is as expected.
-        #
-        self.UTILS.TEST((returnedSMS.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + returnedSMS + "').")
+        time.sleep(10)
+        self.UTILS.clearAllStatusBarNotifs()

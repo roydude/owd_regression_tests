@@ -16,6 +16,7 @@ class test_19231(GaiaTestCase):
         #
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
+        self.settings   = AppSettings(self)
         self.market     = AppMarket(self)
                 
         #
@@ -27,7 +28,7 @@ class test_19231(GaiaTestCase):
         #
         # Get a conection.
         #
-        self.connect_to_network()
+        self.settings.getNetworkConnection()
         self.UTILS.uninstallApp("Wikipedia")
                 
     def tearDown(self):

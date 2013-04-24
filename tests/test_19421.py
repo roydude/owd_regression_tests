@@ -93,4 +93,23 @@ class test_19421(GaiaTestCase):
         #
         self.messages.sendSMS()
         
-        self.UTILS.TEST(False, "Need to verify the other phone receives the sms somehow.")
+        #
+        # Wait for the last message in this thread to be a 'recieved' one.
+        #
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread(180)
+        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
+        
+        #
+        # TEST: The returned message is as expected (caseless in case user typed it manually).
+        #
+        sms_text = returnedSMS.text
+        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
+            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
+
+        #
+        # The message notifier returned by the weird 'you have sent a text' text
+        # remains in the header unless we clear it.
+        #
+        time.sleep(10)
+        self.UTILS.clearAllStatusBarNotifs()
+

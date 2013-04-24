@@ -32,7 +32,7 @@ class test_19409(GaiaTestCase):
         #
         # Ensure we have a connection.
         #
-        self.connect_to_network()
+        self.Settings.getNetworkConnection()
         
         self.UTILS.logComment("Using app '" + self.APP_NAME + "'")
         

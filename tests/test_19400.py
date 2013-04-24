@@ -36,11 +36,9 @@ class test_19400(GaiaTestCase):
             self.UTILS.uninstallApp(self._appName)
         
         #
-        # Ensure we have a connection without wifi.
+        # Ensure we have a connection.
         #
-        self.UTILS.logComment("Not disabling wifi currently.")
-#        self.data_layer.disable_wifi()
-        self.connect_to_network()
+        self.Settings.getNetworkConnection()
         
     def tearDown(self):
         self.UTILS.reportResults()

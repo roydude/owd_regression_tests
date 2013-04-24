@@ -42,9 +42,9 @@ class test_19392(GaiaTestCase):
         self.data_layer.insert_contact(self.Contact_1)
         
         #
-        # Set up to use data connection.
+        # Set up a network connection.
         #
-        self.connect_to_network()
+        self.Settings.getNetworkConnection()
         
     def tearDown(self):
         self.UTILS.reportResults()

@@ -29,7 +29,7 @@ class test_19401(GaiaTestCase):
         #
         # Ensure we have a connection.
         #
-        self.connect_to_network()
+        self.Settings.getNetworkConnection()
         
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
