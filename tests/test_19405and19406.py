@@ -24,12 +24,12 @@ class test_19405and19406(GaiaTestCase):
         #
         # Establish parameters.
         #
-        self.USER1  = self.UTILS.get_os_variable("GMAIL_1_USER"  , "Gmail 1 username")
-        self.EMAIL1 = self.UTILS.get_os_variable("GMAIL_1_EMAIL" , "Gmail 1 email")
-        self.PASS1  = self.UTILS.get_os_variable("GMAIL_1_PASS"  , "Gmail 1 password")
-        self.USER2  = self.UTILS.get_os_variable("GMAIL_2_USER"  , "Gmail 2 username")
-        self.EMAIL2 = self.UTILS.get_os_variable("GMAIL_2_EMAIL" , "Gmail 2 email")
-        self.PASS2  = self.UTILS.get_os_variable("GMAIL_2_PASS"  , "Gmail 2 password")
+        self.USER1  = self.UTILS.get_os_variable("GMAIL_1_USER")
+        self.EMAIL1 = self.UTILS.get_os_variable("GMAIL_1_EMAIL")
+        self.PASS1  = self.UTILS.get_os_variable("GMAIL_1_PASS")
+        self.USER2  = self.UTILS.get_os_variable("GMAIL_2_USER")
+        self.EMAIL2 = self.UTILS.get_os_variable("GMAIL_2_EMAIL")
+        self.PASS2  = self.UTILS.get_os_variable("GMAIL_2_PASS")
         self.UTILS.logComment("Using username 1 '" + self.USER1 + "'")
         self.UTILS.logComment("Using password 1 '" + self.PASS1 + "'")
         self.UTILS.logComment("Using email    1 '" + self.EMAIL1 + "'")

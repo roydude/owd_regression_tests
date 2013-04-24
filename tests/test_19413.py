@@ -21,7 +21,7 @@ class test_19413(GaiaTestCase):
         self.UTILS      = UTILS(self)
         self.Settings   = AppSettings(self)
         self.Browser    = AppBrowser(self)
-        self.testURL    = self.UTILS.get_os_variable("URL_TEST_17", "URL to test data connection with")
+        self.testURL    = self.UTILS.get_os_variable("GLOBAL_TEST_URL")
         
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()

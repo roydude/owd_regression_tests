@@ -40,7 +40,7 @@ class test_19421(GaiaTestCase):
         #
         # Establish which phone number to use.
         #
-        self.contact_1["tel"]["value"] = self.UTILS.get_os_variable("TEST_SMS_NUM_19190", "Mobile number for SMS tests (test 19190)")
+        self.contact_1["tel"]["value"] = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
         self.UTILS.logComment("Using target telephone number " + self.contact_1["tel"]["value"])
         
         #

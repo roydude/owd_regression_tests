@@ -19,10 +19,10 @@ class test_19414(GaiaTestCase):
         self.UTILS      = UTILS(self)
         self.Settings   = AppSettings(self)
         self.Browser    = AppBrowser(self)
-        self.wifi_name  = self.UTILS.get_os_variable("WIFI_TEST_16", "Name of wifi to connect to (case sensitive!)")
-        self.testURL    = self.UTILS.get_os_variable("URL_TEST_16", "URL to test wifi with")
-        self.wifi_user  = self.UTILS.get_os_variable("USERNAME_16", "Wifi username")
-        self.wifi_pass  = self.UTILS.get_os_variable("PASSWORD_16", "Wifi password")
+        self.wifi_name  = self.UTILS.get_os_variable("GLOBAL_WIFI_NAME")
+        self.testURL    = self.UTILS.get_os_variable("GLOBAL_TEST_URL")
+        self.wifi_user  = self.UTILS.get_os_variable("GLOBAL_WIFI_USERNAME")
+        self.wifi_pass  = self.UTILS.get_os_variable("GLOBAL_WIFI_PASSWORD")
 
         self.marionette.set_search_timeout(50)
         

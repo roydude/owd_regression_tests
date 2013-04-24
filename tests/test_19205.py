@@ -36,7 +36,7 @@ class test_19205(GaiaTestCase):
         #
         # Establish which phone number to use.
         #
-        self.target_telNum = self.UTILS.get_os_variable("TEST_SMS_NUM", "Mobile number for SMS tests (test 10)")
+        self.target_telNum = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
         self.UTILS.logComment("Sending sms to telephone number " + self.target_telNum)
         
     def tearDown(self):

@@ -24,12 +24,12 @@ class test_19407and19408(GaiaTestCase):
         #
         # Establish parameters.
         #
-        self.USER1  = self.UTILS.get_os_variable("HOTMAIL_1_USER"  , "Hotmail 1 username")
-        self.EMAIL1 = self.UTILS.get_os_variable("HOTMAIL_1_EMAIL" , "Hotmail 1 email")
-        self.PASS1  = self.UTILS.get_os_variable("HOTMAIL_1_PASS"  , "Hotmail 1 password")
-        self.USER2  = self.UTILS.get_os_variable("HOTMAIL_2_USER"  , "Hotmail 2 username")
-        self.EMAIL2 = self.UTILS.get_os_variable("HOTMAIL_2_EMAIL" , "Hotmail 2 email")
-        self.PASS2  = self.UTILS.get_os_variable("HOTMAIL_2_PASS"  , "Hotmail 2 password")
+        self.USER1  = self.UTILS.get_os_variable("HOTMAIL_1_USER")
+        self.EMAIL1 = self.UTILS.get_os_variable("HOTMAIL_1_EMAIL")
+        self.PASS1  = self.UTILS.get_os_variable("HOTMAIL_1_PASS")
+        self.USER2  = self.UTILS.get_os_variable("HOTMAIL_2_USER")
+        self.EMAIL2 = self.UTILS.get_os_variable("HOTMAIL_2_EMAIL")
+        self.PASS2  = self.UTILS.get_os_variable("HOTMAIL_2_PASS")
         self.UTILS.logComment("Using username 1 '" + self.USER1 + "'")
         self.UTILS.logComment("Using password 1 '" + self.PASS1 + "'")
         self.UTILS.logComment("Using email    1 '" + self.EMAIL1 + "'")

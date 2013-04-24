@@ -49,8 +49,8 @@ class test_19180(GaiaTestCase):
         self.contacts.launch()
         
         self.contacts.enableFBImport()
-        fb_user = self.UTILS.get_os_variable("FB_USERNAME", "Username to connect you to facebook.")
-        fb_pass = self.UTILS.get_os_variable("FB_PASSWORD", "Password to connect you to facebook.")
+        fb_user = self.UTILS.get_os_variable("19180_FB_USERNAME")
+        fb_pass = self.UTILS.get_os_variable("19180_FB_PASSWORD")
         self.facebook.login(fb_user, fb_pass)
         
         #
@@ -71,7 +71,7 @@ class test_19180(GaiaTestCase):
         #
         # Select the contact to link.
         #
-        fb_email = self.UTILS.get_os_variable("FB_LINK_EMAIL_ADDRESS", "Email address of facebook account to link.")
+        fb_email = self.UTILS.get_os_variable("19180_FB_LINK_EMAIL_ADDRESS")
         self.facebook.LinkContact(fb_email)
         
         #
