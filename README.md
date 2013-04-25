@@ -146,6 +146,6 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>roy</td><td  align=left>[BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS.</td>
+    <td  align=center>roy</td><td  align=left>[BASIC][EMAIL] Send and receive email with gmail.com.</td>
   </tr>
 </table>

@@ -44,7 +44,7 @@ class test_19392(GaiaTestCase):
         #
         # Set up a network connection.
         #
-        self.Settings.getNetworkConnection()
+        self.settings.getNetworkConnection()
         
     def tearDown(self):
         self.UTILS.reportResults()
