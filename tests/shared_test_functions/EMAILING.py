@@ -48,12 +48,16 @@ class main(GaiaTestCase):
         self.Email      = AppEmail(self)
         self.settings   = AppSettings(self)
         
+        #
+        # Set up specific folder names.
+        #
+        self.UTILS.logComment("Non-gmail account being used.")
+        self.sentFoldername = "Sent"
+        
         if "gmail" in self.testType.lower():
             self.UTILS.logComment("Gmail account being used.")
             self.sentFolderName = "Sent Mail"
-        else:
-            self.UTILS.logComment("Non-gmail account being used.")
-            self.sentFoldername = "Sent"
+        
         
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
