@@ -41,15 +41,15 @@ class test_19392(GaiaTestCase):
         #
         self.data_layer.insert_contact(self.Contact_1)
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
         #
         # Set up a network connection.
         #
         self.settings.getNetworkConnection()
         
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         #
         # Launch contacts app.
         #

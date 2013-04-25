@@ -32,15 +32,15 @@ class test_19398(GaiaTestCase):
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+
+    def test_run(self):
         #
         # Make sure we have the correct time.
         #
         self.UTILS.setTimeToNow()
 
-    def tearDown(self):
-        self.UTILS.reportResults()
-
-    def test_run(self):
         #
         # Launch contacts app.
         #

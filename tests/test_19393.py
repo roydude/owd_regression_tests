@@ -30,6 +30,10 @@ class test_19393(GaiaTestCase):
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
         #
         # Make sure 'things' are as we expect them to be first.
         #
@@ -48,10 +52,6 @@ class test_19393(GaiaTestCase):
         except:
             self.UTILS.logComment("(Just FYI) Unable to automatically set Homescreen geolocation permission.")
 
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         #
         # Launch the 'everything.me' app.
         #

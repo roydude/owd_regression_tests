@@ -38,15 +38,15 @@ class test_19183(GaiaTestCase):
         self.data_layer.insert_contact(self.Contact_1)
         self.data_layer.insert_contact(self.Contact_2)
         
-        #
-        # Set up to use data connection.
-        #
-        self.settings.getNetworkConnection()
-        
     def tearDown(self):
         self.UTILS.reportResults()
         
     def test_run(self):
+        
+        #
+        # Set up to use data connection.
+        #
+        self.settings.getNetworkConnection()
         
         #
         # Launch contacts app.

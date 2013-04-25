@@ -29,22 +29,22 @@ class test_19409(GaiaTestCase):
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
+        
+        self.UTILS.logComment("Using app '" + self.APP_NAME + "'")
+        
         #
         # Ensure we have a connection.
         #
         self.Settings.getNetworkConnection()
         
-        self.UTILS.logComment("Using app '" + self.APP_NAME + "'")
-        
         #
         # Make sure our app isn't installed already.
         #
         self.UTILS.uninstallApp(self.APP_NAME)
-        
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         
         #
         # Launch market app.

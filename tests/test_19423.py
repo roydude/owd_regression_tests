@@ -35,15 +35,15 @@ class test_19423(GaiaTestCase):
         #
         self.Contact_1 = MockContacts().Contact_1
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+
+    def test_run(self):
         #
         # Store our picture on the device.
         #
         self.UTILS.addFileToDevice('./tests/resources/contact_face.jpg', destination='DCIM/100MZLLA')
         
-    def tearDown(self):
-        self.UTILS.reportResults()
-
-    def test_run(self):
         #
         # Launch contacts app.
         #

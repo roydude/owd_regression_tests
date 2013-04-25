@@ -31,17 +31,17 @@ class test_19416(GaiaTestCase):
 
         self.marionette.set_search_timeout(50)
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
+        
         #
         # Load sample images into the gallery.
         #
         for i in self._img_list:
             self.UTILS.addFileToDevice('./tests/resources/' + i, destination='DCIM/100MZLLA')
             
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
-        
         #
         # Open the gallery application.
         #

@@ -29,6 +29,11 @@ class test_19400(GaiaTestCase):
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
+        
         #
         # Uninstall the app (if need be).
         #
@@ -39,11 +44,6 @@ class test_19400(GaiaTestCase):
         # Ensure we have a connection.
         #
         self.Settings.getNetworkConnection()
-        
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         
         #
         # Open the browser app.

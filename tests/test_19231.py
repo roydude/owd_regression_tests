@@ -25,17 +25,17 @@ class test_19231(GaiaTestCase):
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
         
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
+        
         #
         # Get a conection.
         #
         self.settings.getNetworkConnection()
         self.UTILS.uninstallApp("Wikipedia")
                 
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
-        
         #
         # Get the app.
         #

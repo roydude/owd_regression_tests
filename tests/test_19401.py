@@ -34,15 +34,15 @@ class test_19401(GaiaTestCase):
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
         
-        #
-        # Uninstall the app (if need be).
-        #
-        self.UTILS.uninstallApp(self._appName)
-        
     def tearDown(self):
         self.UTILS.reportResults()
         
     def test_run(self):
+        
+        #
+        # Uninstall the app (if need be).
+        #
+        self.UTILS.uninstallApp(self._appName)
         
         #
         # Open the browser app.

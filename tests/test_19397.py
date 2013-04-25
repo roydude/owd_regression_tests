@@ -30,6 +30,12 @@ class test_19397(GaiaTestCase):
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
         
+
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
+    
         #
         # Set the volume to be low (no need to wake up the office! ;o)
         #
@@ -40,12 +46,6 @@ class test_19397(GaiaTestCase):
         #
         self.UTILS.setTimeToNow()
 
-
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
-    
         #
         # Launch clock app.
         #

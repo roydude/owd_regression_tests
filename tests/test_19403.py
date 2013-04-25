@@ -25,16 +25,16 @@ class test_19403(GaiaTestCase):
         self.UTILS      = UTILS(self)
         self.contacts   = AppContacts(self)
 
+    def tearDown(self):
+        self.UTILS.reportResults()
+
+    def test_run(self):
         #
         # Load a couple of images into the gallery.
         #
         for i in self._img_list:
             self.UTILS.addFileToDevice('./tests/resources/' + i, destination='DCIM/100MZLLA')
     
-    def tearDown(self):
-        self.UTILS.reportResults()
-
-    def test_run(self):
         self.UTILS.goHome()
         
         #
