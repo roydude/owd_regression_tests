@@ -39,7 +39,7 @@ class test_19413(GaiaTestCase):
         #
         # Wifi needs to be off for this test to work.
         #
-        self.Settings.turn_dataConn_on(True)
+        self.Settings.turn_dataConn_on()
         
         #
         # Open the browser app.

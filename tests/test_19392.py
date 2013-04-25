@@ -44,8 +44,7 @@ class test_19392(GaiaTestCase):
         #
         # Set up a network connection.
         #
-        self.UTILS.logResult(False, "ROY")
-#         self.settings.getNetworkConnection()
+        self.settings.getNetworkConnection()
         
     def tearDown(self):
         self.UTILS.reportResults()
@@ -80,4 +79,4 @@ class test_19392(GaiaTestCase):
         y = str(friend_count) + "/" + str(friend_count) + " friends imported"
         self.UTILS.TEST(x.text == y, "After import, import details = '" + y + "' (it was '" + x.text + "').")
          
-         
+           

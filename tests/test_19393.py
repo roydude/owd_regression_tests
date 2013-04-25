@@ -83,5 +83,5 @@ class test_19393(GaiaTestCase):
         time.sleep(10)
         self.marionette.switch_to_frame()
         self.UTILS.switchToFrame(*self._APP_FRAME)
-        x = self.UTILS.screenShot("39_" + self._APP_NAME)
+        x = self.UTILS.screenShot("19393_" + self._APP_NAME)
         self.UTILS.logComment("NOTE: Please check the game screenshot in " + x)
