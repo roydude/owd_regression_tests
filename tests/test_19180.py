@@ -47,7 +47,8 @@ class test_19180(GaiaTestCase):
         # Launch contacts app.
         #
         self.contacts.launch()
-        
+
+        self.contacts.tapSettingsButton()
         self.contacts.enableFBImport()
         fb_user = self.UTILS.get_os_variable("T19180_FB_USERNAME")
         fb_pass = self.UTILS.get_os_variable("T19180_FB_PASSWORD")

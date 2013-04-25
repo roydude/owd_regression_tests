@@ -44,7 +44,8 @@ class test_19392(GaiaTestCase):
         #
         # Set up a network connection.
         #
-        self.Settings.getNetworkConnection()
+        self.UTILS.logResult(False, "ROY")
+#         self.settings.getNetworkConnection()
         
     def tearDown(self):
         self.UTILS.reportResults()
@@ -58,24 +59,25 @@ class test_19392(GaiaTestCase):
         #
         # Enable facebook and log in.
         #
+        self.contacts.tapSettingsButton()
         self.contacts.enableFBImport()
         fb_user = self.UTILS.get_os_variable("T19392_FB_USERNAME")
         fb_pass = self.UTILS.get_os_variable("T19392_FB_PASSWORD")
         self.facebook.login(fb_user, fb_pass)
-        
+         
         #
         # Import facebook contacts.
         #
         friend_count = self.facebook.importAll()
-
+ 
         x = self.UTILS.getElements(DOM.Contacts.social_network_contacts, "Social network contact list", True, 30, False)
         self.UTILS.TEST(len(x) == friend_count, 
                         str(friend_count) + " social network friends listed (there were " + str(len(x)) + ").")
-        
+         
         self.contacts.tapSettingsButton()
-                
+                 
         x = self.UTILS.getElement(DOM.Facebook.totals, "Facebook totals")
         y = str(friend_count) + "/" + str(friend_count) + " friends imported"
         self.UTILS.TEST(x.text == y, "After import, import details = '" + y + "' (it was '" + x.text + "').")
-        
-        
+         
+         

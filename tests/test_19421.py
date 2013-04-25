@@ -47,6 +47,7 @@ class test_19421(GaiaTestCase):
         # Add this contact (quick'n'dirty method - we're just testing sms, no adding a contact).
         #
         self.data_layer.insert_contact(self.contact_1)
+
             
     def tearDown(self):
         self.UTILS.reportResults()
