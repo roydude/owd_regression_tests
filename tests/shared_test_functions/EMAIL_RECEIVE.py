@@ -24,50 +24,50 @@ from OWDTestToolkit import *
 #
 import os, time
 
-class test_19405and19406(GaiaTestCase):
-    _Description = "[BASIC][EMAIL] Send and receive email with gmail.com."
+class main():
     
-    def setUp(self):
-        #
-        # Set up child objects...
-        #
-        GaiaTestCase.setUp(self)
-        self.UTILS  = UTILS(self)
-        
-        #
-        # Establish parameters.
-        #
-        self.USER1  = self.UTILS.get_os_variable("GMAIL_1_USER")
-        self.EMAIL1 = self.UTILS.get_os_variable("GMAIL_1_EMAIL")
-        self.PASS1  = self.UTILS.get_os_variable("GMAIL_1_PASS")
-        self.USER2  = self.UTILS.get_os_variable("GMAIL_2_USER")
-        self.EMAIL2 = self.UTILS.get_os_variable("GMAIL_2_EMAIL")
-        self.PASS2  = self.UTILS.get_os_variable("GMAIL_2_PASS")
-        self.UTILS.logComment("Using username 1 '" + self.USER1 + "'")
-        self.UTILS.logComment("Using password 1 '" + self.PASS1 + "'")
-        self.UTILS.logComment("Using email    1 '" + self.EMAIL1 + "'")
-        self.UTILS.logComment("Using username 2 '" + self.USER2 + "'")
-        self.UTILS.logComment("Using password 2 '" + self.PASS2 + "'")
-        self.UTILS.logComment("Using email    2 '" + self.EMAIL2 + "'")
+    def __init__(self, 
+                 p_parent, 
+                 p_testNum,
+                 p_email1,
+                 p_user1,
+                 p_pass1,
+                 p_email2,
+                 p_user2,
+                 p_pass2):
                      
         #
         # Establish parameters.
         #
         self.body           = "This is the test email body."
-        self.sentFolderName = "Sent Mail"
-        self.Email          = AppEmail(self)
-        self.settings       = AppSettings(self)
-        self.subject        = "Test roy - " + str(time.time())
+        self.USER1          = p_user1
+        self.EMAIL1         = p_email1
+        self.PASS1          = p_pass1
+        self.USER2          = p_user2
+        self.EMAIL2         = p_email2
+        self.PASS2          = p_pass2
+        self.apps           = p_parent.apps
+        self.sentFolderName = p_sentFolderName
+        self.Email          = AppEmail(p_parent)
+        self.settings       = AppSettings(p_parent)
+        self.subject        = "Test " + p_testNum + " - " + str(time.time())
+        self.marionette     = p_parent.marionette
+        self.UTILS          = p_parent.UTILS
 
         self.UTILS.logComment("Using subject \"" + self.subject + "\".")
-        
+                
+        #
+        # Keep the subject in a file so the next test (receive email)
+        # can see what subject to search for.
+        #
+        SUBJECT_FILE = open(os.environ['RESULT_DIR'] + "/.email_subject", "w")
+        SUBJECT_FILE.write(self.subject)
+        SUBJECT_FILE.close()
+                
         self.marionette.set_search_timeout(50)
-        self.lockscreen.unlock()
+        p_parent.lockscreen.unlock()
         
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
+    def run(self):
 
         #
         # Make sure we have some data connectivity.
@@ -102,10 +102,11 @@ class test_19405and19406(GaiaTestCase):
         # Check our email is in the sent folder.
         #
         self.Email.openMailFolder(self.sentFolderName)
+        time.sleep(10)
         self.UTILS.TEST(self.Email.emailIsInFolder(self.subject),
             "Email '" + self.subject + "' found in the Sent folder.")
         
-# 
+
 #         ##################################################
 #         #
 #         # RECEIVE EMAIL

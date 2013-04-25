@@ -77,7 +77,7 @@ class test_19397(GaiaTestCase):
         
         _hour   = t.hour
         _minute = t.minute
-        _title  = "Test 35 alarm"
+        _title  = "Test alarm"
 
         self.clock.createAlarm(_hour, _minute, _title)
 

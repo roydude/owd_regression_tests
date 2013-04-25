@@ -94,11 +94,19 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19405and19406</td><td  align=left>[BASIC][EMAIL] Send and receive email with gmail.com.</td>
+    <td  align=center>19405</td><td  align=left>[BASIC][EMAIL] Send email with gmail.</td>
   </tr>
 
   <tr>
-    <td  align=center>19407and19408</td><td  align=left>[BASIC][EMAIL] Send and receive email with hotmail.com.</td>
+    <td  align=center>19406</td><td  align=left>[BASIC][EMAIL] Receive email with gmail.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19407</td><td  align=left>[BASIC][EMAIL] Send email with hotmail.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19408</td><td  align=left>[BASIC][EMAIL] Receive email with hotmail.</td>
   </tr>
 
   <tr>
@@ -143,9 +151,5 @@ TESTS COVERED
 
   <tr>
     <td  align=center>19423</td><td  align=left>[BASIC][CONTACTS] Add new contact filling all the fields - verify the contact is added with the correct values for each field.</td>
-  </tr>
-
-  <tr>
-    <td  align=center>roy</td><td  align=left>[BASIC][EMAIL] Send and receive email with gmail.com.</td>
   </tr>
 </table>
