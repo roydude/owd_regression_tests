@@ -47,13 +47,12 @@ class main(GaiaTestCase):
         #
         # Set up specific folder names.
         #
-        self.UTILS.logComment("Non-gmail account being used.")
-        self.sentFoldername = "Sent"
-        
         if "gmail" in self.testType.lower():
             self.UTILS.logComment("Gmail account being used.")
             self.sentFolderName = "Sent Mail"
-        
+        else:
+            self.UTILS.logComment("Non-gmail account being used.")
+            self.sentFoldername = "Sent"
         
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
@@ -123,12 +122,12 @@ class main(GaiaTestCase):
         #
         try:
             SUBJECT_FILE = open(os.environ['RESULT_DIR'] + "/.email_subject", "r")
+            self.subject = SUBJECT_FILE.read()
+            SUBJECT_FILE.close()
         except:
             self.UTILS.logResult(False, "Email subject file was not found - this test should only be run in conjunction with a 'send email' test.")
             self.UTILS.quitTest()
-             
-        self.subject = SUBJECT_FILE.read()
-        SUBJECT_FILE.close()
+                
         self.UTILS.logComment("Using subject \"" + self.subject + "\".")
                 
         #
