@@ -5,10 +5,6 @@
 # As I can't see ANY different between read and unread emails in the html,
 # I need to rely on a totally unique subject line to identify the precise
 # message sent between the two test accounts.
-# Because of this I need to stay in the same python instance to remember
-# the subject line I generated (and guarantee 100% that 24 ran before 25).
-#
-# Currently used by tests 22, 23, 24 and 25 (combined to 22 and 24).
 #
 
 #
