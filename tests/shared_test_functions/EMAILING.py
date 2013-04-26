@@ -52,7 +52,7 @@ class main(GaiaTestCase):
             self.sentFolderName = "Sent Mail"
         else:
             self.UTILS.logComment("Non-gmail account being used.")
-            self.sentFoldername = "Sent"
+            self.sentFolderName = "Sent"
         
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
