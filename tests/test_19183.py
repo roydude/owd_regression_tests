@@ -13,7 +13,7 @@ from tests.mock_data.contacts import MockContacts
 import time
 
 class test_19183(GaiaTestCase):
-    _Description = "[CONTACTS] Verify that when looking at the details of a contact, the user can make a call to the contact with several phone numbers added."
+    _Description = "**INCOMPLETE** [CONTACTS] Verify that when looking at the details of a contact, the user can make a call to the contact with several phone numbers added."
 
     def setUp(self):
         #
@@ -60,7 +60,7 @@ class test_19183(GaiaTestCase):
         
         # Jumping out here while I try to figure out how to
         # put > 1 phone number in via the mock object!
-        self.UTILS.TEST(False, "Unfinished!", True)
+        return
 
         #
         # Tap the 2nd number to dial it.

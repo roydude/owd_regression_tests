@@ -38,7 +38,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19183</td><td  align=left>[CONTACTS] Verify that when looking at the details of a contact, the user can make a call to the contact with several phone numbers added.</td>
+    <td  align=center>19183</td><td  align=left>**INCOMPLETE** [CONTACTS] Verify that when looking at the details of a contact, the user can make a call to the contact with several phone numbers added.</td>
   </tr>
 
   <tr>
