@@ -94,11 +94,6 @@ class test_19193(GaiaTestCase):
         #
         self.messages.sendSMS()
         
-        time.sleep(3)
-        self.UTILS.TEST (False, "Incomplete")
-        self.UTILS.savePageHTML("/tmp/roy1.html")
-        return
-        
         #
         # Wait for the last message in this thread to be a 'recieved' one.
         #
@@ -111,11 +106,13 @@ class test_19193(GaiaTestCase):
         sms_text = returnedSMS.text
         self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
             "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
+        x = self.UTILS.screenShot("19193")
+        self.UTILS.logResult("info", "(see screenshot " + x + " for more details.)")
 
         #
         # The message notifier returned by the weird 'you have sent a text' text
         # remains in the header unless we clear it.
         #
-        time.sleep(10)
+        self.messages.waitForSMSNotifier("222000")
         self.UTILS.clearAllStatusBarNotifs()
 
