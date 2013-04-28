@@ -71,5 +71,5 @@ class test_19205(GaiaTestCase):
         # The message notifier returned by the weird 'you have sent a text' text
         # remains in the header unless we clear it.
         #
-        time.sleep(10)
+        self.messages.waitForSMSNotifier("222000")
         self.UTILS.clearAllStatusBarNotifs()

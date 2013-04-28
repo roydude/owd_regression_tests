@@ -58,7 +58,15 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19194</td><td  align=left>** Not checking popup warning! ** [SMS] Try send a sms to a contact while airplane is enabled (from sms app - use contact option).</td>
+  </tr>
+
+  <tr>
     <td  align=center>19196</td><td  align=left>[SMS] Send/Receive a new SMS when the conversation thread is empty.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19204</td><td  align=left>[SMS] Send a new SMS by entering manually the phone number (contact number).</td>
   </tr>
 
   <tr>
