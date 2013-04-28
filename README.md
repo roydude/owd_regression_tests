@@ -66,6 +66,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19201</td><td  align=left>[SMS] Select some conversations and press delete.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19204</td><td  align=left>[SMS] Send a new SMS by entering manually the phone number (contact number).</td>
   </tr>
 

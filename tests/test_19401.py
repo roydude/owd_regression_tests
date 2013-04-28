@@ -26,11 +26,6 @@ class test_19401(GaiaTestCase):
         self.Settings   = AppSettings(self)
         self.Browser    = AppBrowser(self)
         
-        #
-        # Ensure we have a connection.
-        #
-        self.Settings.getNetworkConnection()
-        
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
         
@@ -38,6 +33,11 @@ class test_19401(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
+        
+        #
+        # Ensure we have a connection.
+        #
+        self.Settings.getNetworkConnection()
         
         #
         # Uninstall the app (if need be).
