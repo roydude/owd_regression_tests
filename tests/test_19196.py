@@ -10,10 +10,10 @@ from OWDTestToolkit import *
 # Imports particular to this test case.
 #
 
-class test_19205(GaiaTestCase):
-    _Description = "[SMS] Send a new SMS by entering manually the phone number."
+class test_19196(GaiaTestCase):
+    _Description = "[SMS] Send/Receive a new SMS when the conversation thread is empty."
     
-    _TestMsg     = "Test 19205 sms - reply with this same message."
+    _TestMsg     = "Smoke test 10 sms - reply with this same message."
     
     def setUp(self):
         #
@@ -50,15 +50,35 @@ class test_19205(GaiaTestCase):
         self.messages.launch()
         
         #
+        # Delete all threads.
+        #
+        self.messages.deleteAllThreads()
+          
+        #
         # Create and send a new test message.
         #
         self.messages.createAndSendSMS(self.target_telNum, self._TestMsg)
-        
+          
         #
         # Wait for the last message in this thread to be a 'recieved' one.
         #
         returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
         self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
+          
+        #
+        # TEST: The returned message is as expected (caseless in case user typed it manually).
+        #
+        sms_text = returnedSMS.text
+        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
+            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
+         
+        x = self.UTILS.getElement(("id","messages-back-button"), "x")
+        self.marionette.tap(x)
+        
+        #
+        # Check the message via the thread.
+        #
+        self.messages.openThread(self.target_telNum)
         
         #
         # TEST: The returned message is as expected (caseless in case user typed it manually).
@@ -71,5 +91,5 @@ class test_19205(GaiaTestCase):
         # The message notifier returned by the weird 'you have sent a text' text
         # remains in the header unless we clear it.
         #
-        time.sleep(10)
+        self.messages.waitForSMSNotifier("222000")
         self.UTILS.clearAllStatusBarNotifs()

@@ -54,6 +54,14 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19193</td><td  align=left>[SMS] Receive an SMS from a contact with long name.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19196</td><td  align=left>[SMS] Send/Receive a new SMS when the conversation thread is empty.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19205</td><td  align=left>[SMS] Send a new SMS by entering manually the phone number.</td>
   </tr>
 

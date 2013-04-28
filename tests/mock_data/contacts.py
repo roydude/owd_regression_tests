@@ -33,6 +33,20 @@ class MockContacts(dict):
                 "jobTitle"  : "Dancer number two",
                 "comment"   : "Mock test contact 2"
             }
+        self.Contact_longName = {
+                "givenName" : "AAAAAAAAAAAAAAAALEX",
+                "familyName": "SMITHXXXXXXXX",
+                "name"      : "AAAAAAAAAAAAAAAALEX SMITHXXXXXXXX",
+                "email"     : {"type": "", "value": "alex.smith@nowhere.com"},
+                "tel"       : {"type": "Mobile", "value": "222222222"},
+                "adr"       : {"streetAddress"    : "Two Street",
+                               "postalCode"       : "00002",
+                               "locality"      : "City Two",
+                               "countryName"   : "Country Two"},
+                "bday"      : "1982-02-22",
+                "jobTitle"  : "Dancer number two",
+                "comment"   : "Mock test contact with long name"
+            }
 
     # allow getting items as if they were attributes
     def __getattr__(self, attr):
