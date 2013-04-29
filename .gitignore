@@ -6,4 +6,4 @@ gaia-ui-tests
 build
 dist
 *~
-test_roy.py
+tests/test_roy.py
