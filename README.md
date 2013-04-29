@@ -70,11 +70,23 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19197</td><td  align=left>[SMS] Verify the timestamp (received message) when the SMS has been sent from a different timezone.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19200</td><td  align=left>[SMS] Receive a sms while device is locked(Vibration alert), screen off.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19201</td><td  align=left>[SMS] Select some conversations and press delete.</td>
   </tr>
 
   <tr>
     <td  align=center>19202</td><td  align=left>[SMS]Delete a sms conversation</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19203</td><td  align=left>[SMS] Open SMS app after all sms were deleted or there is any sms.</td>
   </tr>
 
   <tr>

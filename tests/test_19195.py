@@ -12,7 +12,7 @@ import time
 #
 from tests.mock_data.contacts import MockContacts
 
-class test_19193(GaiaTestCase):
+class test_19195(GaiaTestCase):
     _Description = "[SMS] Verify the Carrier of number from which the contact is sending message to the user."
     _TestMsg     = "Test text - please ignore."
 
