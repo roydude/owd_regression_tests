@@ -60,12 +60,17 @@ class test_19403(GaiaTestCase):
         #
         # Flick it up (not working currently - retry when marionette toch is working).
         #
-#        x = self.UTILS.get_element(*self.test_apps[len(self.test_apps)-1]["card"])
-#        els = self.marionette.find_elements(*DOM.Home.app_cards)
-#        for x in els:            
-#            x_x = int(x.size['width'] / 2)
-#            x_y = int(x.size['height'] / 2)
-#            self.marionette.flick(x, x_x, x_y, x_x, -100, 1000)
+# #         x = self.UTILS.getElement(*self.test_apps[len(self.test_apps)-1]["card"])
+#         els = self.marionette.find_elements(*DOM.Home.app_cards)
+#         from marionette import Actions
+#         actions = Actions(self.marionette)
+#         for x in els:
+#             actions.press(x, x.size["width"], x.size["height"]).move_by_offset(x.size["width"], 0).release()
+#             actions.perform()
+#             
+# #             x_x = int(x.size['width'] / 2)
+# #             x_y = int(x.size['height'] / 2)
+# #             self.marionette.flick(x, x_x, x_y, x_x, 0, 500)
         
         #
         # For now just click the close_button
@@ -76,7 +81,7 @@ class test_19403(GaiaTestCase):
         for app in self._test_apps:
             x = self.UTILS.getElement(self.test_apps[i]["close_button"], "Close button on '" + self.test_apps[i]["name"] + "' card")
             self.marionette.tap(x)
-
+ 
             self.UTILS.waitForNotElements(self.test_apps[i]["card"], "Card for '" + self.test_apps[i]["name"] + "'", True, 5, False)
             i = i + 1
 

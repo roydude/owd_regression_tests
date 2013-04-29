@@ -12,7 +12,7 @@ from OWDTestToolkit import *
 from tests.mock_data.contacts import MockContacts
 
 class test_19194(GaiaTestCase):
-    _Description = "** Not checking popup warning! ** [SMS] Try send a sms to a contact while airplane is enabled (from sms app - use contact option)."
+    _Description = "[SMS] ** Not checking popup warning! ** Try send a sms to a contact while airplane is enabled (from sms app - use contact option)."
     
     _TestMsg     = "Test sms - reply with this same message."
     

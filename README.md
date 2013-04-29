@@ -38,11 +38,11 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19183</td><td  align=left>**INCOMPLETE** [CONTACTS] Verify that when looking at the details of a contact, the user can make a call to the contact with several phone numbers added.</td>
+    <td  align=center>19183</td><td  align=left>[CONTACTS] **INCOMPLETE** Verify that when looking at the details of a contact, the user can make a call to the contact with several phone numbers added.</td>
   </tr>
 
   <tr>
-    <td  align=center>19190</td><td  align=left>**INCOMPLETE** [CONTACTS] Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist.</td>
+    <td  align=center>19190</td><td  align=left>[CONTACTS] **INCOMPLETE** Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist.</td>
   </tr>
 
   <tr>
@@ -58,7 +58,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19194</td><td  align=left>** Not checking popup warning! ** [SMS] Try send a sms to a contact while airplane is enabled (from sms app - use contact option).</td>
+    <td  align=center>19194</td><td  align=left>[SMS] ** Not checking popup warning! ** Try send a sms to a contact while airplane is enabled (from sms app - use contact option).</td>
   </tr>
 
   <tr>
@@ -171,5 +171,9 @@ TESTS COVERED
 
   <tr>
     <td  align=center>19423</td><td  align=left>[BASIC][CONTACTS] Add new contact filling all the fields - verify the contact is added with the correct values for each field.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>roy</td><td  align=left>(Roy testing something - ignore this).</td>
   </tr>
 </table>

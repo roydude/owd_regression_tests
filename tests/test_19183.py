@@ -13,7 +13,7 @@ from tests.mock_data.contacts import MockContacts
 import time
 
 class test_19183(GaiaTestCase):
-    _Description = "**INCOMPLETE** [CONTACTS] Verify that when looking at the details of a contact, the user can make a call to the contact with several phone numbers added."
+    _Description = "[CONTACTS] **INCOMPLETE** Verify that when looking at the details of a contact, the user can make a call to the contact with several phone numbers added."
 
     def setUp(self):
         #
