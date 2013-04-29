@@ -62,11 +62,19 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19195</td><td  align=left>[SMS] Verify the Carrier of number from which the contact is sending message to the user.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19196</td><td  align=left>[SMS] Send/Receive a new SMS when the conversation thread is empty.</td>
   </tr>
 
   <tr>
     <td  align=center>19201</td><td  align=left>[SMS] Select some conversations and press delete.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19202</td><td  align=left>[SMS]Delete a sms conversation</td>
   </tr>
 
   <tr>
@@ -171,5 +179,9 @@ TESTS COVERED
 
   <tr>
     <td  align=center>19423</td><td  align=left>[BASIC][CONTACTS] Add new contact filling all the fields - verify the contact is added with the correct values for each field.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>roy</td><td  align=left>(Just a 'roy' test - ignore this!)</td>
   </tr>
 </table>

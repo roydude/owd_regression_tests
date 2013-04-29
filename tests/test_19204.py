@@ -52,6 +52,13 @@ class test_19204(GaiaTestCase):
         
         
     def tearDown(self):
+        #
+        # The message notifier returned by the weird 'you have sent a text' text
+        # remains in the header unless we clear it.
+        #
+        self.messages.waitForSMSNotifier("222000",10)
+        self.UTILS.clearAllStatusBarNotifs()
+
         self.UTILS.reportResults()
         
     def test_run(self):
@@ -85,9 +92,3 @@ class test_19204(GaiaTestCase):
         x = self.UTILS.waitForElements(("xpath","//h1[text()='" + self.contact_1["name"] + "']"), 
                                        "Header matching contact name")
         
-        #
-        # The message notifier returned by the weird 'you have sent a text' text
-        # remains in the header unless we clear it.
-        #
-        self.messages.waitForSMSNotifier("222000")
-        self.UTILS.clearAllStatusBarNotifs()

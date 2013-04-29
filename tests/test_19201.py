@@ -50,6 +50,9 @@ class test_19201(GaiaTestCase):
         
         
     def tearDown(self):
+        time.sleep(10) # (in case we don't get a message in the statusbar)
+        self.UTILS.clearAllStatusBarNotifs()
+
         self.UTILS.reportResults()
         
     def test_run(self):
@@ -95,9 +98,3 @@ class test_19201(GaiaTestCase):
         x = self.UTILS.getElements(DOM.Messages.threads, "Message thread checkboxes")
         self.UTILS.TEST(len(x) == 1, "Only 1 thread is left after deleting the other two.")
         
-        #
-        # The message notifier returned by the weird 'you have sent a text' text
-        # remains in the header unless we clear it.
-        #
-        time.sleep(10) # (in case we don't get a message in the statusbar)
-        self.UTILS.clearAllStatusBarNotifs()
