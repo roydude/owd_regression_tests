@@ -110,6 +110,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19351</td><td  align=left>[SMS] Received a SMS with more than 160 characteres.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19392</td><td  align=left>[BASIC][FACEBOOK] Import Facebook contacts from contacts app settings.</td>
   </tr>
 

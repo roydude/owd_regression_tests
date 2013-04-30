@@ -11,7 +11,7 @@ from OWDTestToolkit import *
 #
 
 class test_19205(GaiaTestCase):
-    _Description = "[SMS] Send a SMS with more than 160 characters."
+    _Description = "[SMS] Received a SMS with more than 160 characteres."
     
     def setUp(self):
         #
@@ -73,3 +73,18 @@ class test_19205(GaiaTestCase):
         #
         self.messages.createAndSendSMS(self.target_telNum, sms_message)
         
+        #
+        # Wait for the last message in this thread to be a 'recieved' one.
+        #
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
+        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
+        
+        #
+        # TEST: The returned message is as expected (caseless in case user typed it manually).
+        #
+        sms_text = returnedSMS.text
+        self.UTILS.TEST((sms_text.lower() == sms_message.lower()), 
+            "SMS text received matches the SMS text sent.")
+
+        self.UTILS.TEST(len(sms_text) == sms_message_length,
+                        "Receieved sms is " + str(sms_message_length) + " characters long.")
