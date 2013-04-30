@@ -114,6 +114,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19357</td><td  align=left>[SMS] CLONE - Verify that If the contact only has a phone number, that phone number is automatically selected and the user is returned to the compose SMS screenwidth the contacts name filled-in in the To Field...</td>
+  </tr>
+
+  <tr>
     <td  align=center>19392</td><td  align=left>[BASIC][FACEBOOK] Import Facebook contacts from contacts app settings.</td>
   </tr>
 
