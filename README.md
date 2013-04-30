@@ -194,6 +194,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19420</td><td  align=left>[BASIC][SMS] Receive a sms with vibration (device unlocked) & confirm notification - verify that the notification is fired and that you can see the message received from the other phone.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19421</td><td  align=left>[BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS.</td>
   </tr>
 
