@@ -82,7 +82,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19202</td><td  align=left>[SMS]Delete a sms conversation</td>
+    <td  align=center>19202</td><td  align=left>[SMS] Delete a sms conversation.</td>
   </tr>
 
   <tr>
@@ -103,6 +103,10 @@ TESTS COVERED
 
   <tr>
     <td  align=center>19246</td><td  align=left>[CAMERA] Go to Gallery from Camera.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19350</td><td  align=left>[SMS] Send a SMS with more than 160 characters.</td>
   </tr>
 
   <tr>
