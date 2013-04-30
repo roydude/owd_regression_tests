@@ -206,6 +206,6 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>roy</td><td  align=left>(Just a 'roy' test - ignore this!)</td>
+    <td  align=center>roy</td><td  align=left>[SMS] Delete a sms conversation.</td>
   </tr>
 </table>

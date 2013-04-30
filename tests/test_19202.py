@@ -24,18 +24,18 @@ class test_19202(GaiaTestCase):
         GaiaTestCase.setUp(self)
         self.UTILS = UTILS(self)
         self.messages = AppMessages(self)
-        
+         
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
-        
-        
+         
+         
         #
         # Change the settings to vibration only (backdoor method since
         # this isn't what we're testing).
         #
         self.data_layer.set_setting("vibration.enabled", True)
         self.data_layer.set_setting("audio.volume.notification", 0)
-        
+         
         #
         # Establish which phone number to use.
         #
@@ -50,6 +50,7 @@ class test_19202(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
+
         #
         # Launch messages app.
         #
@@ -59,10 +60,13 @@ class test_19202(GaiaTestCase):
         # Create and send some new tests messages.
         #
         self.messages.createAndSendSMS(self.target_telNum, self._TestMsg1)
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
         self.messages.enterSMSMsg(self._TestMsg2)
         self.messages.sendSMS()
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
         self.messages.enterSMSMsg(self._TestMsg3)
         self.messages.sendSMS()
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
         
         #
         # Go back..
