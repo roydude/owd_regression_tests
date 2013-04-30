@@ -16,6 +16,12 @@ class test_19180(GaiaTestCase):
     _Description = "[FACEBOOK] Unlink all Facebook contacts in the address book in a single step and verify the contacts who was linked to a facebook contacts."
 
     def setUp(self):
+        pass
+    
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
         #
         # Set up child objects...
         #
@@ -37,10 +43,6 @@ class test_19180(GaiaTestCase):
         self.Contact_1 = MockContacts().Contact_1
         self.data_layer.insert_contact(self.Contact_1)
         
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         self.settings.getNetworkConnection()
         
         #

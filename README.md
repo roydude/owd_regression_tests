@@ -11,7 +11,7 @@
 ... or specify particular test numbers, like this:
 
 <pre>
-./run_tests 7 8 21 40 41
+./run_tests.sh 7 8 21 40 41
 </pre>
 
 For more details, please refer to the README.md for OWD_TEST_TOOLKIT.
