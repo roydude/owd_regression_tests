@@ -141,7 +141,7 @@ class main(GaiaTestCase):
         self.Email.setupAccount(self.USER2, self.EMAIL2, self.PASS2)
              
         #
-        # Open the email.
+        # Open the email (we'll already be in the Inbox).
         #
         self.UTILS.TEST(self.Email.openMsg(self.subject),
             "Email was opened successfully.", True)
