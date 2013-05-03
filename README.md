@@ -1,3 +1,8 @@
+WARNING: USING THESE TESTS WILL RESULT IN ALL DATA BEING REMOVED FROM THE DEVICE!
+=================================================================================
+
+
+
 #Instructions for setting up and running automated regression tests.
 
 <b>1.</b> Clone and install the OWD_TEST_TOOLKIT repository (https://github.com/roydude/OWD_TEST_TOOLKIT).
