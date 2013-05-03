@@ -102,6 +102,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19241</td><td  align=left>[EMAIL] Basic: Deleting of a e-mail in Inbox.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19246</td><td  align=left>[CAMERA] Go to Gallery from Camera.</td>
   </tr>
 
@@ -207,9 +211,5 @@ TESTS COVERED
 
   <tr>
     <td  align=center>19423</td><td  align=left>[BASIC][CONTACTS] Add new contact filling all the fields - verify the contact is added with the correct values for each field.</td>
-  </tr>
-
-  <tr>
-    <td  align=center>roy</td><td  align=left>(ignore me).</td>
   </tr>
 </table>

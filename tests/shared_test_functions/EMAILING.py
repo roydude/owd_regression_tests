@@ -34,12 +34,12 @@ class main(GaiaTestCase):
         self.EMAIL2 = self.UTILS.get_os_variable(self.testType.upper() + "_2_EMAIL")
         self.PASS2  = self.UTILS.get_os_variable(self.testType.upper() + "_2_PASS")
         
-        self.UTILS.logComment("Using username 1 '" + self.USER2 + "'")
-        self.UTILS.logComment("Using password 1 '" + self.PASS2 + "'")
-        self.UTILS.logComment("Using email    1 '" + self.EMAIL2 + "'")
-        self.UTILS.logComment("Using username 2 '" + self.USER1 + "'")
-        self.UTILS.logComment("Using password 2 '" + self.PASS1 + "'")
-        self.UTILS.logComment("Using email    2 '" + self.EMAIL1 + "'")
+        self.UTILS.logComment("Using username 1 '" + self.USER1 + "'")
+        self.UTILS.logComment("Using password 1 '" + self.PASS1 + "'")
+        self.UTILS.logComment("Using email    1 '" + self.EMAIL1 + "'")
+        self.UTILS.logComment("Using username 2 '" + self.USER2 + "'")
+        self.UTILS.logComment("Using password 2 '" + self.PASS2 + "'")
+        self.UTILS.logComment("Using email    2 '" + self.EMAIL2 + "'")
 
         self.Email      = AppEmail(self)
         self.settings   = AppSettings(self)
@@ -154,8 +154,8 @@ class main(GaiaTestCase):
          
         x = self.UTILS.getElement(DOM.Email.open_email_from, "'From' field")
          
-        self.UTILS.TEST((x.text == self.EMAIL1 or x.text == email1_name), 
-            "'From' field = '" + self.EMAIL1 + "' (it was '" + x.text + "').")
+        self.UTILS.TEST((x.text == self.EMAIL1 or x.text == email1_name or x.text == self.USER1), 
+            "'From' field shows the sender (it was '" + x.text + "').")
  
         x = self.UTILS.getElement(DOM.Email.open_email_to, "'To' field")
         self.UTILS.TEST((x.text == self.EMAIL2 or x.text == email2_name), 
