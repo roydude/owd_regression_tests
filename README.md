@@ -106,7 +106,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19245</td><td  align=left>[CAMERA] Delete a video just recorded</td>
+    <td  align=center>19245</td><td  align=left>[CAMERA] Delete a video just recorded.</td>
   </tr>
 
   <tr>
@@ -114,7 +114,11 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19247</td><td  align=left>[CAMERA] Delete a picture just taken</td>
+    <td  align=center>19247</td><td  align=left>[CAMERA] Delete a picture just taken.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19253</td><td  align=left>[Gallery] Select multiple pictures and delete them.</td>
   </tr>
 
   <tr>

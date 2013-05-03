@@ -50,7 +50,7 @@ class test_19416(GaiaTestCase):
         #
         # Takes a few seconds for the thumbs to appear...
         #
-        time.sleep(8)
+        self.gallery.waitForThumbnails(len(self._img_list))
         
         #
         # Open each picture ...

@@ -11,7 +11,7 @@ from OWDTestToolkit import *
 #
 
 class test_19245(GaiaTestCase):
-    _Description = "[CAMERA] Delete a video just recorded"
+    _Description = "[CAMERA] Delete a video just recorded."
     
     def setUp(self):
         #
