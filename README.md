@@ -106,7 +106,15 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19245</td><td  align=left>[CAMERA] Delete a video just recorded</td>
+  </tr>
+
+  <tr>
     <td  align=center>19246</td><td  align=left>[CAMERA] Go to Gallery from Camera.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19247</td><td  align=left>[CAMERA] Delete a picture just taken</td>
   </tr>
 
   <tr>
