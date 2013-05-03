@@ -134,6 +134,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19358</td><td  align=left>[SMS] Verify that If the contact has more than one phone number, it opens a list of numbers. Clicking on a number in the list, returns the user to the compose SMS app with the contacts name filled-in in the To Field.(second phone number).</td>
+  </tr>
+
+  <tr>
     <td  align=center>19392</td><td  align=left>[BASIC][FACEBOOK] Import Facebook contacts from contacts app settings.</td>
   </tr>
 
