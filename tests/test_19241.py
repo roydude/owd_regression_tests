@@ -35,13 +35,13 @@ class test_19241(GaiaTestCase):
     def test_run(self):
         AppSettings(self).getNetworkConnection()
 
-        self.USER1  = self.UTILS.get_os_variable("GMAIL_1_USER")
-        self.EMAIL1 = self.UTILS.get_os_variable("GMAIL_1_EMAIL")
-        self.PASS1  = self.UTILS.get_os_variable("GMAIL_1_PASS")
+        self.USER1  = self.UTILS.get_os_variable("GMAIL_2_USER")
+        self.EMAIL1 = self.UTILS.get_os_variable("GMAIL_2_EMAIL")
+        self.PASS1  = self.UTILS.get_os_variable("GMAIL_2_PASS")
         
-        self.UTILS.logComment("Using username 1 '" + self.USER1 + "'")
-        self.UTILS.logComment("Using password 1 '" + self.PASS1 + "'")
-        self.UTILS.logComment("Using email    1 '" + self.EMAIL1 + "'")
+        self.UTILS.logComment("Using username '" + self.USER1 + "'")
+        self.UTILS.logComment("Using password '" + self.PASS1 + "'")
+        self.UTILS.logComment("Using email    '" + self.EMAIL1 + "'")
 
         #
         # Launch Email app.

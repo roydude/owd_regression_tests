@@ -71,6 +71,7 @@ class test_19358(GaiaTestCase):
 #         self.UTILS.waitForElements(("xpath", "//iframe[@src='" + DOM.Messages.frame_locator[1] + "']"), 
 #                                    "Messaging app frame", False, 20)
         self.UTILS.switchToFrame(*DOM.Messages.frame_locator)
+        time.sleep(3)
 
         #
         # TEST: this automatically opens the 'send SMS' screen, so
