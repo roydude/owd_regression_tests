@@ -63,7 +63,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19193</td><td  align=left>[SMS] Receive an SMS from a contact with long name.</td>
+    <td  align=center>19193</td><td  align=left>(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867119) [SMS] Receive an SMS from a contact with long name.</td>
   </tr>
 
   <tr>
@@ -227,7 +227,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19421</td><td  align=left>[BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS.</td>
+    <td  align=center>19421</td><td  align=left>(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867119) [BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS.</td>
   </tr>
 
   <tr>
