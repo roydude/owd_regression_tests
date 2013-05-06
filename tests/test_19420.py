@@ -76,13 +76,18 @@ class test_19420(GaiaTestCase):
         numInput = self.UTILS.getElement(DOM.Messages.target_number, "Target number field")
         numInput.send_keys(self.target_telNum)
         self.messages.enterSMSMsg(self._TestMsg)
-        sendBtn = self.UTILS.getElement(DOM.Messages.send_message_button, "Send sms button")
-        self.marionette.tap(sendBtn)
+        
+        # This wasn't always quick enough so I'm trying js to make it faster ...
+#         sendBtn = self.UTILS.getElement(DOM.Messages.send_message_button, "Send sms button")
+#         self.marionette.tap(sendBtn)        
+        self.marionette.execute_script("document.getElementById('" + \
+                                             DOM.Messages.send_message_button[1] + \
+                                             "').click();")
         
         #
-        # Quickly go 'home' and wait for the notifier.
+        # Bit of a race: QUICKLY go 'home' and wait for the notifier.
         # If we're not quick enough the returned sms will arrive while we're still in
-        # messaging. That will cause the statusbar notifier to never appear.
+        # messaging, in which case the statusbar notifier will never appear.
         #
         self.UTILS.goHome()
         self.messages.waitForSMSNotifier(self.target_telNum)
