@@ -51,6 +51,18 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19185</td><td  align=left>    _Description = '[CONTACTS] The "done" button in new contact mode (email parameter).'</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19186</td><td  align=left>    _Description = '[CONTACTS] Delete all characters to the name and surname fields.'</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19188</td><td  align=left>[CONTACTS] Configure a contact as a favourite.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19190</td><td  align=left>[CONTACTS] **INCOMPLETE** Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist.</td>
   </tr>
 
