@@ -59,7 +59,15 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19187</td><td  align=left>[CONTACTS] Remove a contact from the favorites list.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19188</td><td  align=left>[CONTACTS] Configure a contact as a favourite.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19189</td><td  align=left>[CONTACTS] Add multiple emails addresses.</td>
   </tr>
 
   <tr>
