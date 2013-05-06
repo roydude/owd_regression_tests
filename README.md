@@ -47,6 +47,10 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19184</td><td  align=left>[CONTACTS] Delete a contact from the contact details(all the fields filled).</td>
+  </tr>
+
+  <tr>
     <td  align=center>19190</td><td  align=left>[CONTACTS] **INCOMPLETE** Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist.</td>
   </tr>
 
@@ -151,7 +155,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19397</td><td  align=left>[BASIC][CLOCK] Add an alarm - verify the alarm was added with the correct date and time.</td>
+    <td  align=center>19397</td><td  align=left>(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867987) [BASIC][CLOCK] Add an alarm - verify the alarm was added with the correct date and time.</td>
   </tr>
 
   <tr>

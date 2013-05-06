@@ -13,7 +13,7 @@ from OWDTestToolkit import *
 class test_19196(GaiaTestCase):
     _Description = "[SMS] Send/Receive a new SMS when the conversation thread is empty."
     
-    _TestMsg     = "Test sms - reply with this same message."
+    _TestMsg     = "Test message."
     
     def setUp(self):
         #
