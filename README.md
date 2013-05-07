@@ -127,6 +127,30 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19224</td><td  align=left>    _Description = '[HOME SCREEN] Add and remove categories to everything.me grid.'</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19225</td><td  align=left>[HOME SCREEN] Verify that if no connection available when selecting a category in everything.me the user will be notified about the need to have a network connection to use this functionality.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19226</td><td  align=left>[HOME SCREEN] Verify that when first launch a search-box is shown as well as a list of application categories.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19227</td><td  align=left>[HOME SCREEN] Verify that when the user navigates from everything.me page to the grid, dock is shown again.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19228</td><td  align=left>[HOME SCREEN] Verify that when the user navigates to everything.me page, dock is hidden.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19230</td><td  align=left>    _Description = '[HOME SCREEN] Verify that user can click on "Add more categories" in everything.me grid so I am shown again the list and can add more categories.'</td>
+  </tr>
+
+  <tr>
     <td  align=center>19231</td><td  align=left>[HOME SCREEN] Verify that the user can uninstall a everything.me app through the grid edit mode.</td>
   </tr>
 
@@ -164,6 +188,10 @@ TESTS COVERED
 
   <tr>
     <td  align=center>19351</td><td  align=left>[SMS] Received a SMS with more than 160 characteres.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19353</td><td  align=left>[UTILITY TRAY] As a user, I want to be able to enable/disable Data from the utility tray.</td>
   </tr>
 
   <tr>
