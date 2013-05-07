@@ -44,9 +44,6 @@ class test_19202(GaiaTestCase):
         
         
     def tearDown(self):
-        self.messages.waitForSMSNotifier("222000",10)
-        self.UTILS.clearAllStatusBarNotifs()
-
         self.UTILS.reportResults()
         
     def test_run(self):

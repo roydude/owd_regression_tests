@@ -37,9 +37,6 @@ class test_19197(GaiaTestCase):
         self.target_telNum = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
                 
     def tearDown(self):
-        self.messages.waitForSMSNotifier("222000",10)
-        self.UTILS.clearAllStatusBarNotifs()
-
         self.UTILS.reportResults()
         
     def test_run(self):

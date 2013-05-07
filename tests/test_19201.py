@@ -50,9 +50,6 @@ class test_19201(GaiaTestCase):
         
         
     def tearDown(self):
-        time.sleep(10) # (in case we don't get a message in the statusbar)
-        self.UTILS.clearAllStatusBarNotifs()
-
         self.UTILS.reportResults()
         
     def test_run(self):

@@ -64,9 +64,9 @@ class test_19189(GaiaTestCase):
         #
         # Add a few email addresses.
         #
-        self.add_email("one@myemail.com")
-        self.add_email("two@myemail.com")
-        self.add_email("three@myemail.com")
+        self.contacts.addAnotherEmailAddress("one@myemail.com")
+        self.contacts.addAnotherEmailAddress("two@myemail.com")
+        self.contacts.addAnotherEmailAddress("three@myemail.com")
         
         #
         # Get the new count.
@@ -99,7 +99,7 @@ class test_19189(GaiaTestCase):
         #
         # Count the email fields.
         #
-        x = self.UTILS.getElements( ("xpath", "//ul[@id='details-list']/li"), "Email addresses", False)
+        x = self.UTILS.getElements(DOM.Contacts.email_address_list, "Email addresses", False)
         view_count=0
         email1_found=False
         email2_found=False
@@ -123,24 +123,6 @@ class test_19189(GaiaTestCase):
         self.UTILS.TEST(email2_found, "Second added email is present.")        
         self.UTILS.TEST(email3_found, "Third added email is present.")        
         
-            
-    def add_email(self, p_str):
-        #
-        # Add a new email (and correct the display!).
-        #
-        x = self.UTILS.getElement( ("id","add-new-email"), "Add email button")
-        self.marionette.tap(x)
-        self.marionette.execute_script("document.getElementsByTagName('h1')[0].scrollIntoView();")
-        
-        #
-        # Add the email.
-        #
-        x = self.UTILS.getElements( ("xpath", "//input[@type='email']"), "Email fields", False, 2)
-        for i in x:
-            if i.get_attribute("value") == "":
-                i.send_keys(p_str)
-                break
-        
     
     def show_emails(self):
         #
@@ -148,7 +130,7 @@ class test_19189(GaiaTestCase):
         # (for some reason these are flagged as not displayed, so
         # you have to get them as 'present').
         #
-        x = self.UTILS.getElements( ("xpath", "//input[@type='email']"), "Email fields", False, 2)
+        x = self.UTILS.getElements(DOM.Contacts.email_fields, "Email fields", False, 2)
         self.UTILS.logResult("info", 
                              "NOTE: Contact's email addresses:")
         counter = 0

@@ -151,6 +151,14 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19325</td><td  align=left>(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867987) [CLOCK] Alarm- Delete an alarm.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19328</td><td  align=left>[CLOCK] Clock in different modes (analog, digital).</td>
+  </tr>
+
+  <tr>
     <td  align=center>19350</td><td  align=left>[SMS] Send a SMS with more than 160 characters.</td>
   </tr>
 
