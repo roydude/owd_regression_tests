@@ -55,7 +55,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19186</td><td  align=left>    _Description = '[CONTACTS] Delete all characters to the name and surname fields.'</td>
+    <td  align=center>19186</td><td  align=left>[CONTACTS] Delete all characters to the name and surname fields.</td>
   </tr>
 
   <tr>

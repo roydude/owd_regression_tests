@@ -11,18 +11,12 @@ from OWDTestToolkit import *
 #
 
 class test_19186(GaiaTestCase):
-    _Description = '[CONTACTS] Delete all characters to the name and surname fields.'
+    _Description = "[CONTACTS] Delete all characters to the name and surname fields."
     
     _testName    = "Obi"
     _testSurname = "Wan"
 
     def setUp(self):
-        pass
-    
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         #
         # Set up child objects...
         #
@@ -35,7 +29,11 @@ class test_19186(GaiaTestCase):
         #
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
-
+    
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
         #
         # Launch contacts app.
         #
