@@ -72,18 +72,5 @@ class test_19196(GaiaTestCase):
         self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
             "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
          
-        x = self.UTILS.getElement(("id","messages-back-button"), "x")
-        self.marionette.tap(x)
         
-        #
-        # Check the message via the thread.
-        #
-        self.messages.openThread(self.target_telNum)
-        
-        #
-        # TEST: The returned message is as expected (caseless in case user typed it manually).
-        #
-        sms_text = returnedSMS.text
-        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
 

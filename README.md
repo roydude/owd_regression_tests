@@ -103,6 +103,14 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19198</td><td  align=left>[SMS] Delete all SMS in a conversation with several sms</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19199</td><td  align=left>[SMS] Delete a SMS in a conversation with several sms</td>
+  </tr>
+
+  <tr>
     <td  align=center>19200</td><td  align=left>[SMS] Receive a sms while device is locked(Vibration alert), screen off.</td>
   </tr>
 

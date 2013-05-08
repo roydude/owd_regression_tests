@@ -33,7 +33,7 @@ class test_19241(GaiaTestCase):
         self.UTILS.reportResults()
 
     def test_run(self):
-        AppSettings(self).getNetworkConnection()
+        self.UTILS.getNetworkConnection()
 
         self.USER1  = self.UTILS.get_os_variable("GMAIL_2_USER")
         self.EMAIL1 = self.UTILS.get_os_variable("GMAIL_2_EMAIL")

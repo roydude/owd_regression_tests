@@ -40,6 +40,7 @@ class test_19181(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
+
         #
         # Launch contacts app.
         #

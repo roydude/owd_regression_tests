@@ -15,7 +15,7 @@ from tests.mock_data.contacts import MockContacts
 class test_19190(GaiaTestCase):
     _Description = "[CONTACTS] **INCOMPLETE** Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist."
     
-    _TestMsg     = "Regression test text - please ignore."
+    _TestMsg     = "Test message."
 
     def setUp(self):
         #
@@ -57,8 +57,6 @@ class test_19190(GaiaTestCase):
         
         self.UTILS.logResult(True, "NEED TO REMOVE ALL SMS CONVERSATIONS PRIOR TO THIS TEST.")
         return
-    
-    
         
         #
         # Launch contacts app.

@@ -60,7 +60,7 @@ class main(GaiaTestCase):
         #
         # Make sure we have some data connectivity.
         #
-        self.settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         
     def send_email(self):
         
