@@ -72,16 +72,16 @@ class test_19204(GaiaTestCase):
         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
         
-        #
-        # TEST: The returned message is as expected (caseless in case user typed it manually).
-        #
-        sms_text = returnedSMS.text
-        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
-
-        #
-        # Verify that the header text is now the contact name.
-        #
-        x = self.UTILS.waitForElements(("xpath","//h1[text()='" + self.contact_1["name"] + "']"), 
-                                       "Header matching contact name")
+#         #
+#         # TEST: The returned message is as expected (caseless in case user typed it manually).
+#         #
+#         sms_text = returnedSMS.text
+#         self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
+#             "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
+# 
+#         #
+#         # Verify that the header text is now the contact name.
+#         #
+#         x = self.UTILS.waitForElements(("xpath","//h1[text()='" + self.contact_1["name"] + "']"), 
+#                                        "Header matching contact name")
         

@@ -54,16 +54,16 @@ class test_19205(GaiaTestCase):
         #
         self.messages.createAndSendSMS(self.target_telNum, self._TestMsg)
         
-        #
-        # Wait for the last message in this thread to be a 'recieved' one.
-        #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-        
-        #
-        # TEST: The returned message is as expected (caseless in case user typed it manually).
-        #
-        sms_text = returnedSMS.text
-        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
+#         #
+#         # Wait for the last message in this thread to be a 'recieved' one.
+#         #
+#         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+#         self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
+#         
+#         #
+#         # TEST: The returned message is as expected (caseless in case user typed it manually).
+#         #
+#         sms_text = returnedSMS.text
+#         self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
+#             "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
 
