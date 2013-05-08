@@ -46,7 +46,7 @@ class test_19183(GaiaTestCase):
         #
         # Set up to use data connection.
         #
-        self.settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         
         #
         # Launch contacts app.

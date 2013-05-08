@@ -39,7 +39,7 @@ class test_19409(GaiaTestCase):
         #
         # Ensure we have a connection.
         #
-        self.Settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         
         #
         # Make sure our app isn't installed already.

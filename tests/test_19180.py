@@ -43,7 +43,7 @@ class test_19180(GaiaTestCase):
         self.Contact_1 = MockContacts().Contact_1
         self.data_layer.insert_contact(self.Contact_1)
         
-        self.settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         
         #
         # Launch contacts app.

@@ -43,7 +43,7 @@ class test_19400(GaiaTestCase):
         #
         # Ensure we have a connection.
         #
-        self.Settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         
         #
         # Open the browser app.

@@ -33,7 +33,7 @@ class test_19228(GaiaTestCase):
         #
         # Make sure 'things' are as we expect them to be first.
         #
-        self.Settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
 
         #
         # Veriy that the dock is displayed.

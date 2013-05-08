@@ -35,7 +35,7 @@ class test_19224(GaiaTestCase):
         #
         # Make sure 'things' are as we expect them to be first.
         #
-        self.Settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
 
         #
         # Launch the 'everything.me' app.

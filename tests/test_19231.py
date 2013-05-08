@@ -33,7 +33,7 @@ class test_19231(GaiaTestCase):
         #
         # Get a conection.
         #
-        self.settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         self.UTILS.uninstallApp("Wikipedia")
                 
         #

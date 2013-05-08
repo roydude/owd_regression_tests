@@ -60,7 +60,7 @@ class test_19225(GaiaTestCase):
         #
         self.UTILS.logResult("info", "Using EME with networking ...")
         self.UTILS.scrollHomescreenRight()
-        self.Settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         self.EME.launch()
         self.EME.pickGroup("Local")
         self.UTILS.scrollHomescreenRight()

@@ -37,7 +37,7 @@ class test_19401(GaiaTestCase):
         #
         # Ensure we have a connection.
         #
-        self.Settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         
         #
         # Uninstall the app (if need be).

@@ -37,7 +37,7 @@ class test_19393(GaiaTestCase):
         #
         # Make sure 'things' are as we expect them to be first.
         #
-        self.Settings.getNetworkConnection()
+        self.UTILS.getNetworkConnection()
         
         #
         # Make sure our app isn't installed already.
