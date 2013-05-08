@@ -155,7 +155,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19230</td><td  align=left>    _Description = '[HOME SCREEN] Verify that user can click on "Add more categories" in everything.me grid so I am shown again the list and can add more categories.'</td>
+    <td  align=center>19230</td><td  align=left>[HOME SCREEN] Verify that user can click on 'Add more categories' in everything.me grid so I am shown again the list and can add more categories.</td>
   </tr>
 
   <tr>
