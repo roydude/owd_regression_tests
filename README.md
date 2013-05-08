@@ -135,7 +135,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19224</td><td  align=left>    _Description = '[HOME SCREEN] Add and remove categories to everything.me grid.'</td>
+    <td  align=center>19224</td><td  align=left>[HOME SCREEN] Add and remove categories to everything.me grid.</td>
   </tr>
 
   <tr>

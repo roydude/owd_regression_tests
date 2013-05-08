@@ -11,7 +11,7 @@ from OWDTestToolkit import *
 #
 
 class test_19224(GaiaTestCase):
-    _Description = '[HOME SCREEN] Add and remove categories to everything.me grid.'
+    _Description = "[HOME SCREEN] Add and remove categories to everything.me grid."
     
     _newGroup = "Sports"
     
@@ -32,6 +32,7 @@ class test_19224(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
+        return
         #
         # Make sure 'things' are as we expect them to be first.
         #
