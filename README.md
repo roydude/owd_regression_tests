@@ -51,7 +51,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19185</td><td  align=left>    _Description = '[CONTACTS] The "done" button in new contact mode (email parameter).'</td>
+    <td  align=center>19185</td><td  align=left>[CONTACTS] The 'done' button in new contact mode (email parameter).</td>
   </tr>
 
   <tr>
