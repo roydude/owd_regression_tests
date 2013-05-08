@@ -47,6 +47,9 @@ class test_19359(GaiaTestCase):
         #
         self.data_layer.insert_contact(self.Contact_1)
         
+        self._email_subject = "TEST - " + str(time.time())
+        self._email_message = "Tets message"
+        
     def tearDown(self):
         self.UTILS.reportResults()
         
@@ -86,11 +89,32 @@ class test_19359(GaiaTestCase):
         self.marionette.switch_to_frame()
         self.UTILS.switchToFrame(*DOM.Email.frame_locator) 
         
-        x = ("xpath", "//div[@class='cmp-to-container cmp-addr-container']//span[@class='cmp-peep-name']")
-        y = self.UTILS.getElement(x, "'To' field")
-        self.UTILS.TEST(y.text == self.Contact_1["email"][1]["value"],
-                        "The 'to' field contains '" + \
-                        self.Contact_1["email"][1]["value"] + \
-                        "' (it was (" + y.text + ").")
+        #
+        # Verify the 'to' field is correct.
+        #
+        expected_to = self.Contact_1["email"][1]["value"]
+        y = self.UTILS.getElement(DOM.Email.compose_to_from_contacts, "'To' field")
+        self.UTILS.TEST(y.text == expected_to,
+                        "The 'to' field contains '" + expected_to + "' (it was (" + y.text + ").")
         
-        self.UTILS.screenShotOnErr()
+        #
+        # Fill in the rest and send it.
+        #
+        msg_subject = self.UTILS.getElement(DOM.Email.compose_subject, "'Subject' field")
+        msg_msg     = self.UTILS.getElement(DOM.Email.compose_msg, "Message field")
+        
+        msg_subject.send_keys(self._email_subject)
+        msg_msg.send_keys(self._email_message)
+         
+        #
+        # Send the message.
+        #
+        x = self.UTILS.getElement(DOM.Email.compose_send_btn, "Send button")
+        self.marionette.tap(x)
+        
+        time.sleep(1)
+        
+        self.UTILS.waitForNotElements(DOM.Email.compose_sending_spinner, "Sending email spinner", True, 60, False)
+
+        x = ("xpath", DOM.GLOBAL.app_head_specific % "Inbox")
+        self.UTILS.waitForElements(x, "After sending the email, the inbox", True, 10)
