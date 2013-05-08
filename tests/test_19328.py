@@ -65,7 +65,7 @@ class test_19328(GaiaTestCase):
         #
         device_hhmm = self.UTILS.getElement( ("id", "clock-time"), "Clock time hh:mm").text
         device_ampm = self.UTILS.getElement( ("id", "clock-hour24-state"), "Clock time am / pm").text
-        device_time = device_hhmm + device_ampm
+        device_time = device_hhmm.zfill(2) + device_ampm.zfill(2)
          
         now_hhmm = time.strftime("%I:%M")
         now_ampm = time.strftime("%r")[-2:]
