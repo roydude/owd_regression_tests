@@ -195,11 +195,27 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>19354</td><td  align=left>[UTILITY TRAY] Open settings app from utility tray.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19355</td><td  align=left>[UTILITY TRAY] Activate/Deactivate ariplane  mode from Utility tray icon.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19356</td><td  align=left>[SMS] Verify that If the contact has more than one phone number, it opens a list of numbers. Clicking on a number in the list, returns the user to the compose SMS app with the contacts name filled-in in the To Field.</td>
+  </tr>
+
+  <tr>
     <td  align=center>19357</td><td  align=left>[SMS] CLONE - Verify that If the contact only has a phone number, that phone number is automatically selected and the user is returned to the compose SMS screenwidth the contacts name filled-in in the To Field...</td>
   </tr>
 
   <tr>
     <td  align=center>19358</td><td  align=left>[SMS] Verify that If the contact has more than one phone number, it opens a list of numbers. Clicking on a number in the list, returns the user to the compose SMS app with the contacts name filled-in in the To Field.(second phone number).</td>
+  </tr>
+
+  <tr>
+    <td  align=center>19359</td><td  align=left>[CONTACTS] Send an email to a contact from the contact details (Contact with multiple emails)</td>
   </tr>
 
   <tr>

@@ -11,8 +11,8 @@ from OWDTestToolkit import *
 #
 import time
 
-class test_19353(GaiaTestCase):
-    _Description = "[UTILITY TRAY] As a user, I want to be able to enable/disable Data from the utility tray."
+class test_19355(GaiaTestCase):
+    _Description = "[UTILITY TRAY] Activate/Deactivate ariplane  mode from Utility tray icon."
 
     def setUp(self):
         #
@@ -20,7 +20,6 @@ class test_19353(GaiaTestCase):
         #
         GaiaTestCase.setUp(self)
         self.UTILS     = UTILS(self)
-        self.Browser   = AppBrowser(self)
                 
         #
         # Set timeout for element searches etc...
@@ -36,21 +35,26 @@ class test_19353(GaiaTestCase):
         #
         # Data conn icon is not in status bar yet.
         #
-        self.UTILS.TEST(self.UTILS.isNetworkTypeEnabled("data") == False,
-                         "Data mode is disabled before we start this test.")
-        
-        self.UTILS.toggleViaStatusBar("data")
+        self.UTILS.TEST(self.UTILS.isNetworkTypeEnabled("airplane") == False,
+                         "Airplane mode is disabled before we start this test.")
         
         #
-        # Open the browser app. and check we can load a page.
+        # Enable airplane mode.
         #
-        self.Browser.launch()
-        self.Browser.open_url("http://www.google.com")
-
-        self.UTILS.toggleViaStatusBar("data")
+        self.UTILS.toggleViaStatusBar("airplane")
         
         #
         # Data icon is no longer visible in status bar.
         #
-        self.UTILS.waitForNotElements(DOM.Statusbar.dataConn, "Data icon in statusbar")
+        self.UTILS.waitForElements(DOM.Statusbar.airplane, "Airplane icon in statusbar", True, 20, False)
+        
+        #
+        # Disable airplane mode.
+        #
+        self.UTILS.toggleViaStatusBar("airplane")
+        
+        #
+        # Data icon is no longer visible in status bar.
+        #
+        self.UTILS.waitForNotElements(DOM.Statusbar.airplane, "Airplane icon in statusbar")
         

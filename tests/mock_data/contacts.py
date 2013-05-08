@@ -63,6 +63,22 @@ class MockContacts(dict):
                 "jobTitle"  : "Dancer number two",
                 "comment"   : "Mock test contact 2"
             }
+        self.Contact_multipleEmails = {
+                "givenName" : "Holy",
+                "familyName": "Moley",
+                "name"      : "Holy Moley",
+                "email"     : ({"type": "", "value": "email1@nowhere.com"},
+                               {"type": "", "value": "email2@nowhere.com"},
+                               {"type": "", "value": "email3@nowhere.com"}),
+                "tel"       : {"type": "Mobile", "carrier": "MoviStar", "value": "333333333"},
+                "adr"       : {"streetAddress"    : "Two Street",
+                               "postalCode"       : "00002",
+                               "locality"      : "City Two",
+                               "countryName"   : "Country Two"},
+                "bday"      : "1982-02-22",
+                "jobTitle"  : "Dancer number two",
+                "comment"   : "Mock test contact 2"
+            }
 
     # allow getting items as if they were attributes
     def __getattr__(self, attr):
