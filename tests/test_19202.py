@@ -57,13 +57,13 @@ class test_19202(GaiaTestCase):
         # Create and send some new tests messages.
         #
         self.messages.createAndSendSMS(self.target_telNum, self._TestMsg1)
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         self.messages.enterSMSMsg(self._TestMsg2)
         self.messages.sendSMS()
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         self.messages.enterSMSMsg(self._TestMsg3)
         self.messages.sendSMS()
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread(30)
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         
         #
         # Go back..
