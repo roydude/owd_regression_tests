@@ -102,7 +102,7 @@ class test_19420(GaiaTestCase):
         self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
             "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
          
-        x = self.UTILS.getElement(("id","messages-back-button"), "x")
+        x = self.UTILS.getElement(DOM.Messages.header_back_button, "Back button")
         self.marionette.tap(x)
         
         #
@@ -113,6 +113,7 @@ class test_19420(GaiaTestCase):
         #
         # TEST: The returned message is as expected (caseless in case user typed it manually).
         #
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         sms_text = returnedSMS.text
         self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
             "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
