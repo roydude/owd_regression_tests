@@ -71,7 +71,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19190</td><td  align=left>[CONTACTS] **INCOMPLETE** Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist.</td>
+    <td  align=center>19190</td><td  align=left>[CONTACTS] Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist.</td>
   </tr>
 
   <tr>

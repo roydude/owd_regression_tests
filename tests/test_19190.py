@@ -13,9 +13,9 @@ import time
 from tests.mock_data.contacts import MockContacts
 
 class test_19190(GaiaTestCase):
-    _Description = "[CONTACTS] **INCOMPLETE** Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist."
+    _Description = "[CONTACTS] Verify that the user can send a SMS from a contact details - SMS conversation doesn't exist."
     
-    _TestMsg     = "Test message."
+    _TestMsg     = "Test."
 
     def setUp(self):
         #
@@ -52,12 +52,13 @@ class test_19190(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
-    
-    
-        
-        self.UTILS.logResult(True, "NEED TO REMOVE ALL SMS CONVERSATIONS PRIOR TO THIS TEST.")
-        return
-        
+        #
+        # Launch messages app & delete all Threads
+        #
+        self.messages.launch()
+        self.messages.deleteAllThreads()
+        self.UTILS.touchHomeButton()
+
         #
         # Launch contacts app.
         #
@@ -98,4 +99,3 @@ class test_19190(GaiaTestCase):
         # Click send.
         #
         self.messages.sendSMS()
-        

@@ -15,7 +15,7 @@ from tests.mock_data.contacts import MockContacts
 class test_19421(GaiaTestCase):
     _Description = "(BLOCKED BY BUG 867119) [BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS."
     
-    _TestMsg     = "Regression test text - please ignore."
+    _TestMsg     = "Test."
 
     def setUp(self):
         #
@@ -53,7 +53,7 @@ class test_19421(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
-         #
+        #
         # Clear out any current messages.
         #
         self.messages.launch()
@@ -113,10 +113,10 @@ class test_19421(GaiaTestCase):
         self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
             "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
 
-        #
-        # The message notifier returned by the weird 'you have sent a text' text
-        # remains in the header unless we clear it.
-        #
-        time.sleep(10)
-        self.UTILS.clearAllStatusBarNotifs()
+#         #
+#         # The message notifier returned by the weird 'you have sent a text' text
+#         # remains in the header unless we clear it.
+#         #
+#         time.sleep(10)
+#         self.UTILS.clearAllStatusBarNotifs()
 
