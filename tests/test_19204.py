@@ -14,7 +14,7 @@ from tests.mock_data.contacts import MockContacts
 class test_19204(GaiaTestCase):
     _Description = "[SMS] Send a new SMS by entering manually the phone number (contact number)."
     
-    _TestMsg     = "Test message."
+    _TestMsg     = "Test."
     
     def setUp(self):
         #
@@ -66,12 +66,12 @@ class test_19204(GaiaTestCase):
         #
         self.messages.createAndSendSMS(self.contact_1["tel"]["value"], self._TestMsg)
         
-        #
-        # Wait for the last message in this thread to be a 'recieved' one.
-        #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-        
+#         #
+#         # Wait for the last message in this thread to be a 'recieved' one.
+#         #
+#         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+#         self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
+#         
 #         #
 #         # TEST: The returned message is as expected (caseless in case user typed it manually).
 #         #

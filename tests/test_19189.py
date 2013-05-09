@@ -59,7 +59,7 @@ class test_19189(GaiaTestCase):
         #
         # Count the current email addresses.
         #
-        orig_count = self.show_emails()
+        orig_count = self.contacts.countEmailAddressesWhileEditing()
         
         #
         # Add a few email addresses.
@@ -71,7 +71,7 @@ class test_19189(GaiaTestCase):
         #
         # Get the new count.
         #
-        new_count = self.show_emails()
+        new_count = self.contacts.countEmailAddressesWhileEditing()
         
         #
         # Verify there are 3 more.
@@ -124,19 +124,3 @@ class test_19189(GaiaTestCase):
         self.UTILS.TEST(email3_found, "Third added email is present.")        
         
     
-    def show_emails(self):
-        #
-        # Count the emails and show them
-        # (for some reason these are flagged as not displayed, so
-        # you have to get them as 'present').
-        #
-        x = self.UTILS.getElements(DOM.Contacts.email_fields, "Email fields", False, 2)
-        self.UTILS.logResult("info", 
-                             "NOTE: Contact's email addresses:")
-        counter = 0
-        for i in x:
-            if i.get_attribute("value") != "#value#":
-                counter = counter + 1
-                self.UTILS.logResult("info", "    - " + i.get_attribute("value"))
-            
-        return counter

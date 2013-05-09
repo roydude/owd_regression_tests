@@ -13,7 +13,7 @@ from OWDTestToolkit import *
 class test_19205(GaiaTestCase):
     _Description = "[SMS] Send a new SMS by entering manually the phone number."
     
-    _TestMsg     = "Test 19205 sms - reply with this same message."
+    _TestMsg     = "Test."
     
     def setUp(self):
         #
