@@ -19,7 +19,6 @@ class test_19413(GaiaTestCase):
         #
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
-        self.Settings   = AppSettings(self)
         self.Browser    = AppBrowser(self)
         self.testURL    = self.UTILS.get_os_variable("GLOBAL_TEST_URL")
         
@@ -27,9 +26,6 @@ class test_19413(GaiaTestCase):
         self.lockscreen.unlock()
         
         self.UTILS.logComment("Using " + self.testURL)
-        
-        self.data_layer.disable_wifi()
-        self.data_layer.disable_cell_data()
         
     def tearDown(self):
         self.UTILS.reportResults()
@@ -39,7 +35,10 @@ class test_19413(GaiaTestCase):
         #
         # Wifi needs to be off for this test to work.
         #
-        self.Settings.turn_dataConn_on()
+        self.data_layer.disable_wifi()
+        self.data_layer.disable_cell_data()        
+        self.UTILS.toggleViaStatusBar("data")
+        self.UTILS.waitForNetworkItemEnabled("data")
         
         #
         # Open the browser app.

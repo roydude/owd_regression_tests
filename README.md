@@ -83,7 +83,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19193</td><td  align=left>(BLOCKED BY BUG 867119) [SMS] Receive an SMS from a contact with long name.</td>
+    <td  align=center>19193</td><td  align=left>[SMS] Receive an SMS from a contact with long name.</td>
   </tr>
 
   <tr>

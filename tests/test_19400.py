@@ -23,7 +23,6 @@ class test_19400(GaiaTestCase):
         #
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
-        self.Settings   = AppSettings(self)
         self.Browser    = AppBrowser(self)
         
         self.marionette.set_search_timeout(50)
@@ -58,7 +57,7 @@ class test_19400(GaiaTestCase):
         #
         # Install the app.
         #
-        x = ('id', 'install-app')        
+        x = ('id', 'install-app') 
         install_btn = self.UTILS.getElement(x, "Install an app button")
         self.marionette.tap(install_btn)
         
@@ -66,7 +65,7 @@ class test_19400(GaiaTestCase):
         self.marionette.switch_to_frame()
 
         x = ('id', 'app-install-install-button')        
-        install_btn = self.UTILS.getElement(x, "Install button")
+        install_btn = self.UTILS.getElement(x, "Install button", True, 30)
         self.marionette.tap(install_btn)
         
         # ... and switch back to brwoser to see the next splash screen(!)

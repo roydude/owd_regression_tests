@@ -13,9 +13,9 @@ import time
 from tests.mock_data.contacts import MockContacts
 
 class test_19193(GaiaTestCase):
-    _Description = "(BLOCKED BY BUG 867119) [SMS] Receive an SMS from a contact with long name."
+    _Description = "[SMS] Receive an SMS from a contact with long name."
     
-    _TestMsg     = "Test text - please ignore."
+    _TestMsg     = "Test."
 
     def setUp(self):
         #
@@ -54,11 +54,16 @@ class test_19193(GaiaTestCase):
         
     def test_run(self):
     
-        #
-        # Clear out any current messages.
-        #
+        # Hack around BUG 867119 ....
+#         #
+#         # Clear out any current messages.
+#         #
+#         self.messages.launch()
+#         self.messages.deleteAllThreads()
         self.messages.launch()
-        self.messages.deleteAllThreads()
+        self.messages.createAndSendSMS(self.contact_1["tel"]["value"], "(Just bypassing bug 867119!)")
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+        
         
         #
         # Launch contacts app.

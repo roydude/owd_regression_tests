@@ -39,15 +39,14 @@ class test_19417(GaiaTestCase):
         #
         # Open the video player application.
         #
-        self.apps.kill_all()
         self.video.launch()
         time.sleep(5)
-        
+         
         #
         # the first thumbnail should be our video.
         #
         self.video.checkThumbDuration(0, "00:05", 2)
-        
+         
         #
         # Check that the video is as long as expected.
         #
