@@ -13,7 +13,7 @@ import time
 from tests.mock_data.contacts import MockContacts
 
 class test_19421(GaiaTestCase):
-    _Description = "(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867119) [BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS."
+    _Description = "(BLOCKED BY BUG 867119) [BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS."
     
     _TestMsg     = "Regression test text - please ignore."
 

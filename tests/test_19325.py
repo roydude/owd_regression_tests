@@ -13,7 +13,7 @@ from OWDTestToolkit import *
 import datetime, time   
 
 class test_19325(GaiaTestCase):
-    _Description = "(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867987) [CLOCK] Alarm- Delete an alarm."
+    _Description = "(BLOCKED BY BUG 867987) [CLOCK] Alarm- Delete an alarm."
 
     def setUp(self):
         #

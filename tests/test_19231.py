@@ -40,7 +40,7 @@ class test_19231(GaiaTestCase):
         # Get the app.
         #
         self.market.launch()
-        self.UTILS.TEST(self.market.install_app("Wikipedia", "tfinc"),
+        self.UTILS.TEST(self.market.installApp("Wikipedia", "tfinc"),
                         "App is installed.")
         
         self.UTILS.uninstallApp("Wikipedia")

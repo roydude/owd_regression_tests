@@ -53,7 +53,9 @@ class test_19225(GaiaTestCase):
         #
         # Verify that the message is displayed.
         #
-        self.UTILS.waitForElements(DOM.EME.connection_warning_msg, "Connection message (without using with a network first)")
+        self.UTILS.waitForElements(DOM.EME.connection_warning_msg, 
+                                   "Connection message (without using with a network first)",
+                                   True, 30, False)
         
         #
         # Return home, turn on networking navigate to the group again, then return home.
@@ -81,5 +83,7 @@ class test_19225(GaiaTestCase):
         #
         # Verify that the message is displayed.
         #
-        self.UTILS.waitForElements(DOM.EME.connection_warning_msg, "Connection message (after using with a network)")
+        self.UTILS.waitForElements(DOM.EME.connection_warning_msg, 
+                                   "Connection message (after using with a network)",
+                                   True, 30, False)
          

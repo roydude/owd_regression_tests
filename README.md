@@ -83,7 +83,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19193</td><td  align=left>(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867119) [SMS] Receive an SMS from a contact with long name.</td>
+    <td  align=center>19193</td><td  align=left>(BLOCKED BY BUG 867119) [SMS] Receive an SMS from a contact with long name.</td>
   </tr>
 
   <tr>
@@ -151,7 +151,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19228</td><td  align=left>[HOME SCREEN] Verify that when the user navigates to everything.me page, dock is hidden.</td>
+    <td  align=center>19228</td><td  align=left>(BLOCKED BY BUG 865232) [HOME SCREEN] Verify that when the user navigates to everything.me page, dock is hidden.</td>
   </tr>
 
   <tr>
@@ -183,7 +183,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19325</td><td  align=left>(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867987) [CLOCK] Alarm- Delete an alarm.</td>
+    <td  align=center>19325</td><td  align=left>(BLOCKED BY BUG 867987) [CLOCK] Alarm- Delete an alarm.</td>
   </tr>
 
   <tr>
@@ -235,7 +235,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19397</td><td  align=left>(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867987) [BASIC][CLOCK] Add an alarm - verify the alarm was added with the correct date and time.</td>
+    <td  align=center>19397</td><td  align=left>(BLOCKED BY BUG 867987) [BASIC][CLOCK] Add an alarm - verify the alarm was added with the correct date and time.</td>
   </tr>
 
   <tr>
@@ -307,7 +307,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19421</td><td  align=left>(BLOCKED BY: https://bugzilla.mozilla.org/show_bug.cgi?id=867119) [BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS.</td>
+    <td  align=center>19421</td><td  align=left>(BLOCKED BY BUG 867119) [BASIC][CONTACTS] Send an sms from a contact detail - Verify the contact receives the SMS.</td>
   </tr>
 
   <tr>

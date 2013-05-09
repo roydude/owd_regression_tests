@@ -54,7 +54,7 @@ class test_19409(GaiaTestCase):
         #
         # Install our app.
         #
-        self.UTILS.TEST(self.Market.install_app(self.APP_NAME, self.APP_AUTHOR),
+        self.UTILS.TEST(self.Market.installApp(self.APP_NAME, self.APP_AUTHOR),
                         "Successfully installed application '" + self.APP_NAME + "'.", True)
         
         #

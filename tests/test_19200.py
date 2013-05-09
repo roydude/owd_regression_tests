@@ -79,4 +79,4 @@ class test_19200(GaiaTestCase):
         # Wait for the notification.
         #
         x = self.UTILS.getElement(("xpath", DOM.Messages.lockscreen_notif_xpath % self.target_telNum), 
-                                   "New message notification while screen is locked", False, 20, False)
+                                   "New message notification while screen is locked", False, 120, False)

@@ -11,7 +11,7 @@ from OWDTestToolkit import *
 #
 
 class test_19228(GaiaTestCase):
-    _Description = "[HOME SCREEN] Verify that when the user navigates to everything.me page, dock is hidden."
+    _Description = "(BLOCKED BY BUG 865232) [HOME SCREEN] Verify that when the user navigates to everything.me page, dock is hidden."
     
     def setUp(self):
         #
@@ -49,7 +49,7 @@ class test_19228(GaiaTestCase):
         #
         # Verify that the dock is now hidden.
         #
-        self.UTILS.waitForNotElements(DOM.Home.dock, "Dock (while EME is opened)", True, 2, False)
+        self.UTILS.waitForNotElements(DOM.Home.dock, "Dock (while EME is opened)", True, 20, False)
         
         
         
