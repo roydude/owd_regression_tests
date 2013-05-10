@@ -42,7 +42,6 @@ class test_19180(GaiaTestCase):
         
     def test_run(self):        
         self.UTILS.getNetworkConnection()
-        return
         
         #
         # Launch contacts app.
