@@ -47,7 +47,7 @@ class test_19359(GaiaTestCase):
         #
         self.data_layer.insert_contact(self.Contact_1)
         
-        self._email_subject = "TEST - " + str(time.time())
+        self._email_subject = "TEST " + str(time.time())
         self._email_message = "Tets message"
         
     def tearDown(self):
@@ -100,21 +100,15 @@ class test_19359(GaiaTestCase):
         #
         # Fill in the rest and send it.
         #
-        msg_subject = self.UTILS.getElement(DOM.Email.compose_subject, "'Subject' field")
-        msg_msg     = self.UTILS.getElement(DOM.Email.compose_msg, "Message field")
-        
-        msg_subject.send_keys(self._email_subject)
-        msg_msg.send_keys(self._email_message)
+#         msg_subject = self.UTILS.getElement(DOM.Email.compose_subject, "'Subject' field")
+#         msg_msg     = self.UTILS.getElement(DOM.Email.compose_msg, "Message field")
+#         msg_subject.send_keys(self._email_subject)
+#         msg_msg.send_keys(self._email_message)
+        self.UTILS.typeThis(DOM.Email.compose_subject, "'Subject' field", self._email_subject, True, False)
+        self.UTILS.typeThis(DOM.Email.compose_msg    , "Message field"  , self._email_message, True, False)
+
          
         #
         # Send the message.
         #
-        x = self.UTILS.getElement(DOM.Email.compose_send_btn, "Send button")
-        self.marionette.tap(x)
-        
-        time.sleep(1)
-        
-        self.UTILS.waitForNotElements(DOM.Email.compose_sending_spinner, "Sending email spinner", True, 60, False)
-
-        x = ("xpath", DOM.GLOBAL.app_head_specific % "Inbox")
-        self.UTILS.waitForElements(x, "After sending the email, the inbox", True, 10)
+        self.email.sendTheMessage()

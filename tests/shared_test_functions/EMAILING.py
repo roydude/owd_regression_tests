@@ -70,7 +70,7 @@ class main(GaiaTestCase):
         #
         # We're sending, so create (and record) a unique 'subject'.
         #
-        self.subject    = self.testNum + " - " + str(time.time())
+        self.subject    = "TEST " + str(time.time())
         self.body       = "This is the test email body."
         
         self.UTILS.logComment("Using subject \"" + self.subject + "\".")
