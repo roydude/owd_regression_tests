@@ -16,12 +16,6 @@ class test_19187(GaiaTestCase):
     _Description = "[CONTACTS] Remove a contact from the favorites list."
 
     def setUp(self):
-        pass
-    
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         #
         # Set up child objects...
         #
@@ -41,6 +35,13 @@ class test_19187(GaiaTestCase):
         self.Contact_1 = MockContacts().Contact_1
         self.data_layer.insert_contact(self.Contact_1)
         
+        self.UTILS.setTimeToNow()
+        
+    
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
         #
         # Launch contacts app.
         #

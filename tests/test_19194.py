@@ -56,6 +56,8 @@ class test_19194(GaiaTestCase):
         #
         self.data_layer.set_setting('ril.radio.disabled', True)
 
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

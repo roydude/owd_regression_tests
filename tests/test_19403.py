@@ -25,6 +25,8 @@ class test_19403(GaiaTestCase):
         self.UTILS      = UTILS(self)
         self.contacts   = AppContacts(self)
 
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
 

@@ -43,6 +43,8 @@ class test_19198(GaiaTestCase):
         self.UTILS.logComment("Sending sms to telephone number " + self.target_telNum)
         
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
 #         self.messages.waitForSMSNotifier("222000",5)
 #         self.UTILS.clearAllStatusBarNotifs()

@@ -36,6 +36,8 @@ class test_19181(GaiaTestCase):
         self.data_layer.insert_contact(self.Contact_1)
         self.UTILS.addFileToDevice('./tests/resources/contact_face.jpg', destination='DCIM/100MZLLA')
           
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

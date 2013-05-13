@@ -43,6 +43,8 @@ class test_19202(GaiaTestCase):
         self.UTILS.logComment("Sending sms to telephone number " + self.target_telNum)
         
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

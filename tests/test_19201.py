@@ -49,6 +49,8 @@ class test_19201(GaiaTestCase):
         self.data_layer.insert_contact(self.contact_3)
         
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

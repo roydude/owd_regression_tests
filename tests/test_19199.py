@@ -30,7 +30,7 @@ class test_19199(GaiaTestCase):
         
         
         #
-        # Change the settings to vibration only (backdoor method since
+        # Change the settings to vibration only (bac    kdoor method since
         # this isn't what we're testing).
         #
         self.data_layer.set_setting("vibration.enabled", True)
@@ -42,6 +42,8 @@ class test_19199(GaiaTestCase):
         self.target_telNum = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
         self.UTILS.logComment("Sending sms to telephone number " + self.target_telNum)
         
+        
+        self.UTILS.setTimeToNow()
         
     def tearDown(self):
 #         self.messages.waitForSMSNotifier("222000",5)

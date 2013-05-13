@@ -31,6 +31,8 @@ class test_19253(GaiaTestCase):
 
         self.marionette.set_search_timeout(50)
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

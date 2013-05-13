@@ -39,6 +39,8 @@ class test_19196(GaiaTestCase):
         self.target_telNum = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
         self.UTILS.logComment("Sending sms to telephone number " + self.target_telNum)
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

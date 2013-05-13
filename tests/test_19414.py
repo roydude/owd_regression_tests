@@ -28,6 +28,8 @@ class test_19414(GaiaTestCase):
         
         self.data_layer.disable_wifi()
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

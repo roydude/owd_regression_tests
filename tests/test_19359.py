@@ -50,6 +50,8 @@ class test_19359(GaiaTestCase):
         self._email_subject = "TEST " + str(time.time())
         self._email_message = "Tets message"
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

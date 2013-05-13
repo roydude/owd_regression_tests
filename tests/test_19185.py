@@ -16,12 +16,6 @@ class test_19185(GaiaTestCase):
     _email_addy = "one_two@myemail.com"
 
     def setUp(self):
-        pass
-    
-    def tearDown(self):
-        self.UTILS.reportResults()
-        
-    def test_run(self):
         #
         # Set up child objects...
         #
@@ -40,6 +34,13 @@ class test_19185(GaiaTestCase):
         #
         self.contacts.launch()
 
+        self.UTILS.setTimeToNow()
+        
+    
+    def tearDown(self):
+        self.UTILS.reportResults()
+        
+    def test_run(self):
         #
         # Click create new contact.
         #

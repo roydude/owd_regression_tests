@@ -35,6 +35,8 @@ class test_19423(GaiaTestCase):
         #
         self.Contact_1 = MockContacts().Contact_1
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
 

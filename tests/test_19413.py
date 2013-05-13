@@ -27,6 +27,8 @@ class test_19413(GaiaTestCase):
         
         self.UTILS.logComment("Using " + self.testURL)
         
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

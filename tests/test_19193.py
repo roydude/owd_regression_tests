@@ -48,12 +48,13 @@ class test_19193(GaiaTestCase):
         #
         self.data_layer.insert_contact(self.contact_1)
 
+        self.UTILS.setTimeToNow()
+        
         
     def tearDown(self):
         self.UTILS.reportResults()
         
     def test_run(self):
-    
         # Hack around BUG 867119 ....
 #         #
 #         # Clear out any current messages.

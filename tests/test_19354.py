@@ -28,6 +28,8 @@ class test_19354(GaiaTestCase):
         self.lockscreen.unlock()
 
     
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         

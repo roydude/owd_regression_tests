@@ -25,6 +25,8 @@ class test_19417(GaiaTestCase):
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
     
+        self.UTILS.setTimeToNow()
+        
     def tearDown(self):
         self.UTILS.reportResults()
         
