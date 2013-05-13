@@ -62,6 +62,8 @@ class main(GaiaTestCase):
         #
         self.UTILS.getNetworkConnection()
         
+        self.UTILS.setTimeToNow()
+        
     def send_email(self):
         
         self.setUpEmail()
