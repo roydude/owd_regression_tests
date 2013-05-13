@@ -319,6 +319,6 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>roy</td><td  align=left>(ignore me!)</td>
+    <td  align=center>roy</td><td  align=left>MOVE APP</td>
   </tr>
 </table>
