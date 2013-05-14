@@ -9,6 +9,7 @@ from OWDTestToolkit import *
 #
 # Imports particular to this test case.
 #
+import time
 
 class test_19245(GaiaTestCase):
     _Description = "[CAMERA] Delete a video just recorded."
@@ -35,7 +36,11 @@ class test_19245(GaiaTestCase):
         # Record a test video.
         #
         self.camera.launch()
-        self.camera.recordVideo("00:05")
+
+        #
+        # record a 5 second video.
+        #
+        self.camera.recordVideo(5)
  
         #
         # Tap the thumbnail for it (assume it's the only one).
@@ -45,7 +50,7 @@ class test_19245(GaiaTestCase):
         #
         # Tap the trash icon.
         #
-        x = self.UTILS.getElement( ("id", "delete-button"), "Trash icon")
+        x = self.UTILS.getElement(DOM.Camera.trash_icon, "Trash icon", True, 10, True)
         self.marionette.tap(x)
          
         #

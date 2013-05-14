@@ -319,10 +319,6 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>roy2</td><td  align=left>Hello</td>
-  </tr>
-
-  <tr>
     <td  align=center>roy</td><td  align=left>MOVE APP</td>
   </tr>
 </table>
