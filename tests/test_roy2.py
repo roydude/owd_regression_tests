@@ -10,9 +10,8 @@ from OWDTestToolkit import *
 # Imports particular to this test case.
 #
 
-class test_19199(GaiaTestCase):
-    _Description = "[SMS] Delete a SMS in a conversation with several sms."
-    
+class test_19198(GaiaTestCase):
+#_Description = "Hello"
     _TestMsg1 = "First message."
     _TestMsg2 = "Second message"
     _TestMsg3 = "Third message"
@@ -30,7 +29,7 @@ class test_19199(GaiaTestCase):
         
         
         #
-        # Change the settings to vibration only (bac    kdoor method since
+        # Change the settings to vibration only (backdoor method since
         # this isn't what we're testing).
         #
         self.data_layer.set_setting("vibration.enabled", True)
@@ -52,6 +51,7 @@ class test_19199(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
+        return
         #
         # Launch messages app & delete all Threads
         #
@@ -69,46 +69,34 @@ class test_19199(GaiaTestCase):
         self.messages.enterSMSMsg(self._TestMsg3)
         self.messages.sendSMS()
         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-
-        #
-        # Check how many elements are there
-        #
-        x = self.UTILS.getElements(DOM.Messages.thread_messages,"Messages")
-        original_count = len(x)
-        self.UTILS.logResult("info", 
-                             "Before deleting the message, there were " + str(original_count) + " messages in this thread")
-        
+ 
         #
         # Go into edit mode..
         #
-        x= self.UTILS.getElement(DOM.Messages.edit_messages_icon, "Edit button" )
+        x= self.UTILS.getElement( ("id","icon-edit"), "Edit button" )
         self.marionette.tap(x)
         
         #
-        # Check the thread.
+        # Tap Selected all
         #
-        x = self.UTILS.getElements(DOM.Messages.thread_messages, "Messages")
-        self.marionette.tap(x[0])
-        
+        x = self.UTILS.getElement( ("id","messages-check-all-button"), "Sellect all")
+        self.marionette.tap(x)
+
         #
         # Tap delete
         #
-        x= self.UTILS.getElement(DOM.Messages.delete_messages_button, "Delete message" )
+        x= self.UTILS.getElement( ("id","messages-delete-button"), "Delete message" )
         self.marionette.tap(x)
-        
-        self.marionette.switch_to_frame()
+        self.marionette.switch_to_frame()        
         x = self.UTILS.getElement(DOM.Messages.confirm_delete_threads, "OK button in question dialog")
         self.marionette.tap(x)
         self.UTILS.switchToFrame(*DOM.Messages.frame_locator)
         time.sleep(2)
         
         #
-        # Check message isn't there anymore.
+        # Check conversation isn't there anymore.
         #
-        x = self.UTILS.getElements(DOM.Messages.thread_messages,"Messages")
-        final_count = len(x)
-        real_count= original_count-1
-        self.UTILS.TEST(final_count == (original_count-1), 
-                        "After deleting the message, there were " + \
-                        str(real_count) + \
-                        " messages in this thread (" + str(final_count) + " found).")      
+        self.UTILS.waitForNotElements(("xpath", DOM.Messages.thread_selector_xpath % self.target_telNum),"Thread")
+ 
+        time.sleep(1)
+        self.UTILS.screenShotOnErr()  
