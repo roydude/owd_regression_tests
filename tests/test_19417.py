@@ -35,7 +35,7 @@ class test_19417(GaiaTestCase):
         # Record a test video.
         #
         self.camera.launch()
-        self.camera.recordVideo("00:05")
+        self.camera.recordVideo(5)
         self.camera.checkVideoLength(0, 4.9, 10.1)
 
         #
