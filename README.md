@@ -319,6 +319,14 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>4700</td><td  align=left>[SMS] Receive an SMS with a link to a web site and open it.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>4708</td><td  align=left>[SMS] Receive an SMS with a phone number and store it.</td>
+  </tr>
+
+  <tr>
     <td  align=center>roy</td><td  align=left>MOVE APP</td>
   </tr>
 </table>
