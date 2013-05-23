@@ -52,13 +52,13 @@ class test_19409(GaiaTestCase):
         # Launch market app.
         #
         self.Market.launch()
-        
+                
         #
         # Install our app.
         #
         self.UTILS.TEST(self.Market.installApp(self.APP_NAME, self.APP_AUTHOR),
                         "Successfully installed application '" + self.APP_NAME + "'.", True)
-        
+                
         #
         # Launch the app from the homescreen.
         #
