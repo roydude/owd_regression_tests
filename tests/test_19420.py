@@ -50,12 +50,12 @@ class test_19420(GaiaTestCase):
         # Start by making sure we have no other notifications.
         #
         self.UTILS.clearAllStatusBarNotifs()
-        
+         
         #
         # Launch messages app.
         #
         self.messages.launch()
-        
+         
         #
         # Delete all threads.
         #
@@ -90,12 +90,6 @@ class test_19420(GaiaTestCase):
         # Click the notifier.
         #
         self.messages.clickSMSNotifier(self.target_telNum)
-          
-        #
-        # Wait for the last message in this thread to be a 'recieved' one.
-        #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
           
         #
         # TEST: The returned message is as expected (caseless in case user typed it manually).
