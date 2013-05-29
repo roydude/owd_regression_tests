@@ -58,26 +58,37 @@ class test_4700(GaiaTestCase):
         # Make sure it's empty first.
         #
         self.messages.deleteAllThreads()
-        
+          
         #
         # Create and send a new test message.
         #
-        self.messages.createAndSendSMS(self.target_telNum, self._TestMsg)
+        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg)
+          
+        #
+        # Wait for the last message in this thread to be a 'recieved' one
+        # and click the link.
+        #
+        x = self.messages.waitForReceivedMsgInThisThread()
+        x.find_element("tag name", "a").click()
         
         #
-        # Wait for the last message in this thread to be a 'recieved' one.
+        # Switch to the top level frame and select browser
+        # from the popup dialog.
         #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-        
-        x = self.UTILS.getElements( ("xpath", "//a[text()='" + self._link + "']"), "The link")
-        self.marionette.tap(x[1]) #(the received one)
-        
-        time.sleep(5)
-        
+        time.sleep(1)
         self.marionette.switch_to_frame()
+        
+        x = self.UTILS.getElement( ("xpath", "//a[text()='Browser']"), "Browser button", True, 5, False)
+        x.click()
+                
+        #
+        # Give the browser time to start up, then
+        # switch to the browser frame and check the page loaded.
+        #
+        time.sleep(2)
         self.UTILS.switchToFrame(*DOM.Browser.frame_locator)
         
-        self.browser.check_page_loaded(self._link)
+        self.UTILS.TEST(self.browser.check_page_loaded(self._link),
+                        "Web page loaded correctly.")
         
 

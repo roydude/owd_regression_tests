@@ -80,9 +80,6 @@ class test_19188(GaiaTestCase):
         x = self.UTILS.getElement(DOM.Contacts.details_back_button, "Back button")
         self.marionette.tap(x)
         
-        #
-        # Check our chap is listed in the group favourites.
-        #
         favs = ("xpath", DOM.Contacts.favourites_list_xpath % self.Contact_1['name'].replace(" ", ""))
         x = self.UTILS.waitForElements(favs,"'" + self.Contact_1['name'] + "' in the favourites list")
         

@@ -9,11 +9,10 @@ from OWDTestToolkit import *
 #
 # Imports particular to this test case.
 #
+from tests.mock_data.contacts import MockContacts
 
-class test_19196(GaiaTestCase):
-    _Description = "[SMS] Send/Receive a new SMS when the conversation thread is empty."
-    
-    _TestMsg     = "Test message."
+class test_6037(GaiaTestCase):
+    _Description = "[SMS] CLONE - Verify that If the name of the contact is not empty The name of the contact as the main header."
     
     def setUp(self):
         #
@@ -34,45 +33,33 @@ class test_19196(GaiaTestCase):
         self.data_layer.set_setting("audio.volume.notification", 0)
         
         #
-        # Establish which phone number to use.
+        # Add contact (with the correct number).
         #
-        self.target_telNum = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
-        self.UTILS.logComment("Sending sms to telephone number " + self.target_telNum)
-        
+        self.Contact_1 = MockContacts().Contact_1
+        self.Contact_1["tel"]["value"] = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
+        self.UTILS.logComment("Using target telephone number " + self.Contact_1["tel"]["value"])
+        self.data_layer.insert_contact(self.Contact_1)
+
         self.UTILS.setTimeToNow()
         
     def tearDown(self):
         self.UTILS.reportResults()
         
     def test_run(self):
-        
         #
         # Launch messages app.
         #
         self.messages.launch()
-        
-        #
-        # Delete all threads.
-        #
         self.messages.deleteAllThreads()
-          
-        #
-        # Create and send a new test message.
-        #
-        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg)
-          
-        #
-        # Wait for the last message in this thread to be a 'recieved' one.
-        #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-          
-        #
-        # TEST: The returned message is as expected (caseless in case user typed it manually).
-        #
-        sms_text = returnedSMS.text
-        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
-         
-        
 
+        #
+        # Send a message to create a thread (use number, not name as this
+        # avoids some blocking bugs just now). 
+        #
+        self.messages.createAndSendSMS( [self.Contact_1["tel"]["value"]], "Test message.")
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+        
+        #
+        # Examine the header.
+        #
+        self.UTILS.headerCheck(self.Contact_1["name"])

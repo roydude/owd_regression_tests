@@ -56,51 +56,34 @@ class test_19199(GaiaTestCase):
         # Launch messages app & delete all Threads
         #
         self.messages.launch()
-        self.messages.deleteAllThreads()
         
+        self.messages.deleteAllThreads()
+           
         #
         # Create and send some new tests messages.
         #
-        self.messages.createAndSendSMS(self.target_telNum, self._TestMsg1)
+        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg1)
         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+          
         self.messages.enterSMSMsg(self._TestMsg2)
         self.messages.sendSMS()
         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+          
         self.messages.enterSMSMsg(self._TestMsg3)
         self.messages.sendSMS()
         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-
+  
         #
         # Check how many elements are there
         #
-        x = self.UTILS.getElements(DOM.Messages.thread_messages,"Messages")
-        original_count = len(x)
-        self.UTILS.logResult("info", 
-                             "Before deleting the message, there were " + str(original_count) + " messages in this thread")
+        original_count = self.messages.countMessagesInThisThread()
+        self.UTILS.logResult("info",
+                             "Before deletion there were " + str(original_count) + " messages in this thread.")
         
         #
-        # Go into edit mode..
+        # Select the messages to be deleted.
         #
-        x= self.UTILS.getElement(DOM.Messages.edit_messages_icon, "Edit button" )
-        self.marionette.tap(x)
-        
-        #
-        # Check the thread.
-        #
-        x = self.UTILS.getElements(DOM.Messages.thread_messages, "Messages")
-        self.marionette.tap(x[0])
-        
-        #
-        # Tap delete
-        #
-        x= self.UTILS.getElement(DOM.Messages.delete_messages_button, "Delete message" )
-        self.marionette.tap(x)
-        
-        self.marionette.switch_to_frame()
-        x = self.UTILS.getElement(DOM.Messages.confirm_delete_threads, "OK button in question dialog")
-        self.marionette.tap(x)
-        self.UTILS.switchToFrame(*DOM.Messages.frame_locator)
-        time.sleep(2)
+        self.messages.deleteMessagesInThisThread([1])
         
         #
         # Check message isn't there anymore.

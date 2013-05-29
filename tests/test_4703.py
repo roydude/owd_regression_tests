@@ -10,11 +10,12 @@ from OWDTestToolkit import *
 # Imports particular to this test case.
 #
 
-class test_19196(GaiaTestCase):
-    _Description = "[SMS] Send/Receive a new SMS when the conversation thread is empty."
+class test_4703(GaiaTestCase):
+    _Description = "[SMS] Receive an SMS with a phone number and call to it."
     
-    _TestMsg     = "Test message."
-    
+    _TestNum = "0781234567890"
+    _TestMsg = "Test number " + _TestNum + " for dialling."
+        
     def setUp(self):
         #
         # Set up child objects...
@@ -22,6 +23,7 @@ class test_19196(GaiaTestCase):
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
         self.messages   = AppMessages(self)
+        self.phone      = AppPhone(self)
         
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
@@ -45,14 +47,13 @@ class test_19196(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
-        
         #
         # Launch messages app.
         #
         self.messages.launch()
         
         #
-        # Delete all threads.
+        # Make sure it's empty first.
         #
         self.messages.deleteAllThreads()
           
@@ -60,19 +61,26 @@ class test_19196(GaiaTestCase):
         # Create and send a new test message.
         #
         self.messages.createAndSendSMS([self.target_telNum], self._TestMsg)
-          
-        #
-        # Wait for the last message in this thread to be a 'recieved' one.
-        #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-          
-        #
-        # TEST: The returned message is as expected (caseless in case user typed it manually).
-        #
-        sms_text = returnedSMS.text
-        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
-         
         
-
+        #
+        # Wait for the last message in this thread to be a 'recieved' one
+        # and click the link.
+        #
+        x = self.messages.waitForReceivedMsgInThisThread()
+        x.find_element("tag name", "a").click()        
+        
+        time.sleep(5)
+        
+        self.marionette.switch_to_frame()
+        self.UTILS.switchToFrame(*DOM.Phone.frame_locator_from_sms)
+        
+        #
+        # Dial the number.
+        #
+        self.phone.callThisNumber()
+        
+        #
+        # Wait 2 seconds, then hangup.
+        #
+        time.sleep(2)
+        self.phone.hangUp()

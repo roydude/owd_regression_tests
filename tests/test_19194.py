@@ -12,9 +12,9 @@ from OWDTestToolkit import *
 from tests.mock_data.contacts import MockContacts
 
 class test_19194(GaiaTestCase):
-    _Description = "[SMS] ** Not checking popup warning! ** Try send a sms to a contact while airplane is enabled (from sms app - use contact option)."
+    _Description = "(BLOCKED BY BUG 876344) [SMS] Try send a sms to a contact while airplane is enabled (from sms app - use contact option)."
     
-    _TestMsg     = "Test sms - reply with this same message."
+    _TestMsg     = "Test."
     
     def setUp(self):
         #
@@ -67,18 +67,18 @@ class test_19194(GaiaTestCase):
         # Launch contacts app.
         #
         self.contacts.launch()
-         
+          
         #
         # View the details of our contact.
         #
         self.contacts.viewContact(self.contact_1['name'])
-         
+          
         #
         # Tap the sms button in the view details screen to go to the sms page.
         #
         smsBTN = self.UTILS.getElement(DOM.Contacts.sms_button, "Send SMS button")
         self.marionette.tap(smsBTN)
- 
+  
         #
         # Switch to the 'Messages' app frame (or marionette will still be watching the
         # 'Contacts' app!).
@@ -86,31 +86,35 @@ class test_19194(GaiaTestCase):
         time.sleep(2)
         self.marionette.switch_to_frame()
         self.UTILS.switchToFrame(*DOM.Messages.frame_locator)
- 
+  
         #
         # TEST: this automatically opens the 'send SMS' screen, so
         # check the correct name is in the header of this sms.
         #
-        self.UTILS.TEST(self.UTILS.headerCheck(self.contact_1['name']),
-                        "'Send message' header = '" + self.contact_1['name'] + "'.")
-     
+        self.UTILS.headerCheck("1 recipient")
+        self.messages.checkIsInToField(self.contact_1['name'])
+      
         #
         # Create SMS.
         #
         self.messages.enterSMSMsg(self._TestMsg)
-         
+          
         #
         # Click send.
         #
         self.messages.sendSMS()
 
+
+        #
+        # Check that popup appears.
+        #
+        self.messages.checkAirplaneModeWarning()
+               
         #
         # Check that this last message is marked as failed.
         #
-        time.sleep(1)
-        x = self.UTILS.getElements(DOM.Messages.thread_messages, "Last thread message", True, 5)[-1]
-        y = x.find_element("tag name", "a")
-        z = y.get_attribute("class")
-        self.UTILS.TEST(z == "error", "The last message in this thread is marked as 'error'.")
+        x = self.messages.lastMessageInThisThread()
+        self.UTILS.TEST( "error" in x.get_attribute("class"),
+                         "The last message in this thread is marked as 'error'.")
         
         

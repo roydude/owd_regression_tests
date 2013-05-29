@@ -13,7 +13,7 @@ import time
 from tests.mock_data.contacts import MockContacts
 
 class test_19195(GaiaTestCase):
-    _Description = "[SMS] Verify the Carrier of number from which the contact is sending message to the user."
+    _Description = "[SMS] *** NOT CHECKING CARRIER YET!! *** Verify the Carrier of number from which the contact is sending message to the user."
     _TestMsg     = "Test text - please ignore."
 
     def setUp(self):
@@ -74,21 +74,18 @@ class test_19195(GaiaTestCase):
         # Switch to the 'Messages' app frame (or marionette will still be watching the
         # 'Contacts' app!).
         #
-        time.sleep(2)
+        time.sleep(5)
         self.marionette.switch_to_frame()
         self.UTILS.switchToFrame(*DOM.Messages.frame_locator)
  
-        #
-        # TEST: this automatically opens the 'send SMS' screen, so
-        # check the correct name is in the header of this sms.
-        #
-        self.UTILS.TEST(self.UTILS.headerCheck(self.contact_1['name']),
-                        "'Send message' header = '" + self.contact_1['name'] + "'.")
-     
-        #
-        #  Check the carrier is displayed here.
-        #
-        x = self.UTILS.getElement(DOM.Messages.type_and_carrier_field, "Contact phone 'type' and 'carrier' field")
+        self.UTILS.headerCheck("1 recipient")     
+        self.messages.checkIsInToField(self.contact_1['name'])
         
-        self.UTILS.TEST( self.contact_1["tel"]["type"]    in x.text, "Phone type is in the header.")
-        self.UTILS.TEST( self.contact_1["tel"]["carrier"] in x.text, "Phone carrier is in the header.")
+        # Not present in 'master' branch because of multiple target number fnuctionality.
+#         #
+#         #  Check the carrier is displayed here.
+#         #
+#         x = self.UTILS.getElement(DOM.Messages.type_and_carrier_field, "Contact phone 'type' and 'carrier' field")
+#         
+#         self.UTILS.TEST( self.contact_1["tel"]["type"]    in x.text, "Phone type is in the header.")
+#         self.UTILS.TEST( self.contact_1["tel"]["carrier"] in x.text, "Phone carrier is in the header.")

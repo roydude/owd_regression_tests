@@ -10,10 +10,8 @@ from OWDTestToolkit import *
 # Imports particular to this test case.
 #
 
-class test_19196(GaiaTestCase):
-    _Description = "[SMS] Send/Receive a new SMS when the conversation thread is empty."
-    
-    _TestMsg     = "Test message."
+class test_6031(GaiaTestCase):
+    _Description = "[SMS] CLONE - Receive a text message from number XXX while we are in the conversation details with that number."
     
     def setUp(self):
         #
@@ -34,45 +32,27 @@ class test_19196(GaiaTestCase):
         self.data_layer.set_setting("audio.volume.notification", 0)
         
         #
-        # Establish which phone number to use.
+        # Add contact (with the correct number).
         #
-        self.target_telNum = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
-        self.UTILS.logComment("Sending sms to telephone number " + self.target_telNum)
-        
+        self.telNum = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
+        self.UTILS.logComment("Using target telephone number " + self.telNum)
+
         self.UTILS.setTimeToNow()
         
     def tearDown(self):
         self.UTILS.reportResults()
         
     def test_run(self):
-        
         #
         # Launch messages app.
         #
         self.messages.launch()
-        
-        #
-        # Delete all threads.
-        #
         self.messages.deleteAllThreads()
-          
-        #
-        # Create and send a new test message.
-        #
-        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg)
-          
-        #
-        # Wait for the last message in this thread to be a 'recieved' one.
-        #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-          
-        #
-        # TEST: The returned message is as expected (caseless in case user typed it manually).
-        #
-        sms_text = returnedSMS.text
-        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
-         
-        
 
+        #
+        # Send a message to create a thread (use number, not name as this
+        # avoids some blocking bugs just now). 
+        #
+        self.messages.createAndSendSMS( [self.telNum], "Test message.")
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+        

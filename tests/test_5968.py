@@ -10,10 +10,10 @@ from OWDTestToolkit import *
 # Imports particular to this test case.
 #
 
-class test_19196(GaiaTestCase):
-    _Description = "[SMS] Send/Receive a new SMS when the conversation thread is empty."
+class test_5968(GaiaTestCase):
+    _Description = "[SMS] CLONE - Verify characters in text box above the keyboard when typing a sms."
     
-    _TestMsg     = "Test message."
+    _testStr = "abcdefghijklmnopqrstuvwxyz"
     
     def setUp(self):
         #
@@ -45,34 +45,20 @@ class test_19196(GaiaTestCase):
         self.UTILS.reportResults()
         
     def test_run(self):
-        
         #
         # Launch messages app.
         #
         self.messages.launch()
         
         #
-        # Delete all threads.
+        # Type a message containing the required string 
+        # (the test is already included in 'enterSMSMsg' because it uses 'typeThis()').
         #
-        self.messages.deleteAllThreads()
-          
-        #
-        # Create and send a new test message.
-        #
-        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg)
-          
-        #
-        # Wait for the last message in this thread to be a 'recieved' one.
-        #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-          
-        #
-        # TEST: The returned message is as expected (caseless in case user typed it manually).
-        #
-        sms_text = returnedSMS.text
-        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
-         
-        
+        self.messages.startNewSMS()
 
+        self.messages.enterSMSMsg(self._testStr, False)
+        
+        self.UTILS.screenShot("5968")
+        
+        
+        

@@ -66,5 +66,13 @@ class test_19205(GaiaTestCase):
         #
         # Create and send a new test message.
         #
-        self.messages.createAndSendSMS(self.target_telNum, sms_message)
+        self.messages.createAndSendSMS([self.target_telNum], sms_message)
+
+        #
+        # Check that this last message is not marked as failed.
+        #
+        time.sleep(1)
+        x = self.messages.lastMessageInThisThread()
+        self.UTILS.TEST( "error" not in x.get_attribute("class"),
+                         "The last message in this thread is not marked with error icon.")
         

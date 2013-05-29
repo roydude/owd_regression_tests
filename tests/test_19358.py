@@ -21,6 +21,7 @@ class test_19358(GaiaTestCase):
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
         self.contacts   = AppContacts(self)
+        self.messages   = AppMessages(self)
                 
         #
         # Set timeout for element searches.
@@ -79,17 +80,11 @@ class test_19358(GaiaTestCase):
         # TEST: this automatically opens the 'send SMS' screen, so
         # check the correct name is in the header of this sms.
         #
-        self.UTILS.TEST(self.UTILS.headerCheck(self.Contact_1['name']),
-                        "'Send message' header = '" + self.Contact_1['name'] + "'.")
+        self.UTILS.headerCheck("1 recipient")
     
 
         #
         # Check this is the right number.
         #
-        x = self.UTILS.getElement( ("id", "contact-carrier"), "Number and carrier field")
-
-        self.UTILS.TEST(self.Contact_1["tel"][1]["type"] in x.text,
-                        "'" + self.Contact_1["tel"][1]["type"] + "' displayed in the number / carrier field.")
-
-        self.UTILS.TEST(self.Contact_1["tel"][1]["carrier"] in x.text,
-                        "'" + self.Contact_1["tel"][1]["carrier"] + "' displayed in the number / carrier field.")
+        self.messages.checkIsInToField(self.Contact_1["name"])
+        self.messages.checkNumberIsInToField(self.Contact_1["tel"][1]["value"])

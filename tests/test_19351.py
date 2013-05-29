@@ -66,7 +66,7 @@ class test_19205(GaiaTestCase):
         #
         # Create and send a new test message.
         #
-        self.messages.createAndSendSMS(self.target_telNum, sms_message)
+        self.messages.createAndSendSMS([self.target_telNum], sms_message)
         
         #
         # Wait for the last message in this thread to be a 'recieved' one.

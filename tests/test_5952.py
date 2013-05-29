@@ -10,10 +10,8 @@ from OWDTestToolkit import *
 # Imports particular to this test case.
 #
 
-class test_19196(GaiaTestCase):
-    _Description = "[SMS] Send/Receive a new SMS when the conversation thread is empty."
-    
-    _TestMsg     = "Test message."
+class test_5952(GaiaTestCase):
+    _Description = "[SMS] CLONE - Try to send empty SMS."
     
     def setUp(self):
         #
@@ -39,40 +37,35 @@ class test_19196(GaiaTestCase):
         self.target_telNum = self.UTILS.get_os_variable("GLOBAL_TARGET_SMS_NUM")
         self.UTILS.logComment("Sending sms to telephone number " + self.target_telNum)
         
-        self.UTILS.setTimeToNow()
-        
     def tearDown(self):
         self.UTILS.reportResults()
         
-    def test_run(self):
-        
+    def test_run(self):        
         #
         # Launch messages app.
         #
         self.messages.launch()
         
         #
-        # Delete all threads.
+        # Start a new sms.
         #
-        self.messages.deleteAllThreads()
-          
-        #
-        # Create and send a new test message.
-        #
-        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg)
-          
-        #
-        # Wait for the last message in this thread to be a 'recieved' one.
-        #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-          
-        #
-        # TEST: The returned message is as expected (caseless in case user typed it manually).
-        #
-        sms_text = returnedSMS.text
-        self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
-            "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
-         
+        self.messages.startNewSMS()
         
+        #
+        # Enter a number in the target field.
+        #
+        self.messages.addNumberInToField(self.target_telNum)
 
+        #
+        # Tap the message area.
+        #
+        x = self.UTILS.getElement(DOM.Messages.input_message_area, "Message body input field")
+        x.tap()
+
+        #
+        # Check the 'Send button isn't enabled yet.
+        #
+        x = self.UTILS.getElement(DOM.Messages.send_message_button, "Send message button")
+        self.UTILS.TEST(not x.is_enabled(), 
+                        "Send button is not enabled after target number is supplied, but message still empty.")
+        

@@ -21,6 +21,7 @@ class test_19356(GaiaTestCase):
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
         self.contacts   = AppContacts(self)
+        self.messages   = AppMessages(self)
                 
         #
         # Set timeout for element searches.
@@ -51,9 +52,6 @@ class test_19356(GaiaTestCase):
         self.contacts.launch()
         
         #
-        # Select our contact.
-        #
-        #
         # View the details of our contact.
         #
         self.contacts.viewContact(self.Contact_1['name'])
@@ -70,26 +68,17 @@ class test_19356(GaiaTestCase):
         # 'Contacts' app!).
         #
         self.marionette.switch_to_frame()
-#         self.UTILS.waitForElements(("xpath", "//iframe[@src='" + DOM.Messages.frame_locator[1] + "']"), 
-#                                    "Messaging app frame", False, 20)
         self.UTILS.switchToFrame(*DOM.Messages.frame_locator)
-        time.sleep(3)
+        time.sleep(2)
 
         #
         # TEST: this automatically opens the 'send SMS' screen, so
         # check the correct name is in the header of this sms.
         #
-        self.UTILS.TEST(self.UTILS.headerCheck(self.Contact_1['name']),
-                        "'Send message' header = '" + self.Contact_1['name'] + "'.")
-    
+        self.UTILS.headerCheck("1 recipient")
 
         #
         # Check this is the right number.
         #
-        x = self.UTILS.getElement( ("id", "contact-carrier"), "Number and carrier field")
-
-        self.UTILS.TEST(self.Contact_1["tel"][0]["type"] in x.text,
-                        "'" + self.Contact_1["tel"][0]["type"] + "' displayed in the number / carrier field.")
-
-        self.UTILS.TEST(self.Contact_1["tel"][0]["carrier"] in x.text,
-                        "'" + self.Contact_1["tel"][0]["carrier"] + "' displayed in the number / carrier field.")
+        self.messages.checkIsInToField(self.Contact_1["name"])
+        self.messages.checkNumberIsInToField(self.Contact_1["tel"][0]["value"])

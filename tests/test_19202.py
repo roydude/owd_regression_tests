@@ -58,13 +58,7 @@ class test_19202(GaiaTestCase):
         #
         # Create and send some new tests messages.
         #
-        self.messages.createAndSendSMS(self.target_telNum, self._TestMsg1)
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.messages.enterSMSMsg(self._TestMsg2)
-        self.messages.sendSMS()
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.messages.enterSMSMsg(self._TestMsg3)
-        self.messages.sendSMS()
+        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg1)
         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         
         #
@@ -74,25 +68,12 @@ class test_19202(GaiaTestCase):
         self.marionette.tap(x)
         
         #
-        # Go into edit mode..
+        # Delete this thread.
         #
-        x= self.UTILS.getElement(DOM.Messages.edit_threads_button, "Edit button" )
-        self.marionette.tap(x)
-        
+        self.messages.deleteThreads([self.target_telNum])
+                
         #
-        # Check the thread.
-        #
-        x = self.UTILS.getElement(("xpath", DOM.Messages.thread_selector_xpath % self.target_telNum),
-                                  "Thread checkbox")
-        self.marionette.tap(x)
-        
-        #
-        # Tap delete
-        #
-        self.messages.deleteSelectedThreads()
-        
-        #
-        # Check conversation isn't there anymore.
+        # Check thread isn't there anymore.
         #
         self.UTILS.waitForNotElements(("xpath", DOM.Messages.thread_selector_xpath % self.target_telNum),"Thread") 
                 

@@ -24,7 +24,8 @@ class test_4708(GaiaTestCase):
         GaiaTestCase.setUp(self)
         self.UTILS      = UTILS(self)
         self.messages   = AppMessages(self)
-        self.contacts    = AppContacts(self)
+        self.phone      = AppPhone(self)
+        self.contacts   = AppContacts(self)
         
         self.marionette.set_search_timeout(50)
         self.lockscreen.unlock()
@@ -59,39 +60,32 @@ class test_4708(GaiaTestCase):
         # Make sure it's empty first.
         #
         self.messages.deleteAllThreads()
-        
+         
         #
         # Create and send a new test message.
         #
-        self.messages.createAndSendSMS(self.target_telNum, self._TestMsg)
+        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg)
         
         #
-        # Wait for the last message in this thread to be a 'recieved' one.
+        # Wait for the last message in this thread to be a 'recieved' one
+        # and click the link.
         #
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-        self.UTILS.TEST(returnedSMS, "A receieved message appeared in the thread.", True)
-        
-        x = self.UTILS.getElements( ("xpath", "//a[text()='" + self._testNum + "']"), "The number")
-        self.marionette.tap(x[1]) #(the received one)
+        x = self.messages.waitForReceivedMsgInThisThread()
+        x.find_element("tag name", "a").click()        
         
         time.sleep(5)
         
         self.marionette.switch_to_frame()
-        self.UTILS.switchToFrame(*DOM.GLOBAL.dialler_iframe)
-        
-        x = self.UTILS.getElement( ("id", "option-contacts"), "Contacts button")
-        self.marionette.tap(x)
-        
-        self.marionette.switch_to_frame()
-        self.UTILS.switchToFrame("src", "app://communications.gaiamobile.org/dialer/index.html#keyboard-view")
-        
+        self.UTILS.switchToFrame(*DOM.Phone.frame_locator_from_sms)
         
         #
-        # PALOMA - I can't find this button, my DOM definition here isn't right for some reason!! :( :( :(
-        x = self.UTILS.getElement( ("id", "keypad-callbar-add-contact"), "'Add new contact' button")
-        self.marionette.tap(x)
+        # Create a contact from this number.
+        #
+        self.phone.createContactFromThisNum()
 
-        
-        self.UTILS.screenShotOnErr()
-        
-
+        #
+        # Make sure the number is automatically in the contact details.
+        #        
+        x = self.UTILS.getElement( ("id", "number_0"), "Mobile number field")
+        self.UTILS.TEST(x.get_attribute("value") == self._testNum, 
+                        "The correct number is automatically entered in the new contact's number field.")

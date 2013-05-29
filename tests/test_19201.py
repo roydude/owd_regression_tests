@@ -69,13 +69,13 @@ class test_19201(GaiaTestCase):
         #
         # Create and send a new test message.
         #
-        self.messages.createAndSendSMS(self.contact_1["tel"]["value"], self._TestMsg)
+        self.messages.createAndSendSMS([self.contact_1["tel"]["value"]], self._TestMsg)
         x = self.UTILS.getElement(DOM.Messages.header_back_button, "Back button")
         self.marionette.tap(x)
-        self.messages.createAndSendSMS(self.contact_2["tel"]["value"], self._TestMsg)
+        self.messages.createAndSendSMS([self.contact_2["tel"]["value"]], self._TestMsg)
         x = self.UTILS.getElement(DOM.Messages.header_back_button, "Back button")
         self.marionette.tap(x)
-        self.messages.createAndSendSMS(self.contact_3["tel"]["value"], self._TestMsg)
+        self.messages.createAndSendSMS([self.contact_3["tel"]["value"]], self._TestMsg)
         x = self.UTILS.getElement(DOM.Messages.header_back_button, "Back button")
         self.marionette.tap(x)
         

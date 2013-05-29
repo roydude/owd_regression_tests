@@ -62,9 +62,11 @@ class test_19193(GaiaTestCase):
 #         self.messages.launch()
 #         self.messages.deleteAllThreads()
         self.messages.launch()
-        self.messages.createAndSendSMS(self.contact_1["tel"]["value"], "(Just bypassing bug 867119!)")
-        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         
+        
+        self.messages.createAndSendSMS( [self.contact_1["tel"]["value"]], 
+                                        "(Just bypassing bug 867119!)")
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         
         #
         # Launch contacts app.
@@ -92,11 +94,11 @@ class test_19193(GaiaTestCase):
 
         #
         # TEST: this automatically opens the 'send SMS' screen, so
-        # check the correct name is in the header of this sms.
+        # check the correct name is in the "To:" field of this sms.
         #
-        self.UTILS.TEST(self.UTILS.headerCheck(self.contact_1['name']),
-                        "'Send message' header = '" + self.contact_1['name'] + "'.")
-    
+        self.UTILS.headerCheck("1 recipient")
+        self.messages.checkIsInToField(self.contact_1['name'])
+        
         #
         # Create SMS.
         #

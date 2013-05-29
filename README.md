@@ -87,11 +87,11 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19194</td><td  align=left>[SMS] ** Not checking popup warning! ** Try send a sms to a contact while airplane is enabled (from sms app - use contact option).</td>
+    <td  align=center>19194</td><td  align=left>(BLOCKED BY BUG 876344) [SMS] Try send a sms to a contact while airplane is enabled (from sms app - use contact option).</td>
   </tr>
 
   <tr>
-    <td  align=center>19195</td><td  align=left>[SMS] Verify the Carrier of number from which the contact is sending message to the user.</td>
+    <td  align=center>19195</td><td  align=left>[SMS] *** NOT CHECKING CARRIER YET!! *** Verify the Carrier of number from which the contact is sending message to the user.</td>
   </tr>
 
   <tr>
@@ -139,7 +139,7 @@ TESTS COVERED
   </tr>
 
   <tr>
-    <td  align=center>19225</td><td  align=left>[HOME SCREEN] Verify that if no connection available when selecting a category in everything.me the user will be notified about the need to have a network connection to use this functionality.</td>
+    <td  align=center>19225</td><td  align=left>(BLOCKED BY BUG 874362) [HOME SCREEN] Verify that if no connection available when selecting a category in everything.me the user will be notified about the need to have a network connection to use this functionality.</td>
   </tr>
 
   <tr>
@@ -323,7 +323,99 @@ TESTS COVERED
   </tr>
 
   <tr>
+    <td  align=center>4703</td><td  align=left>[SMS] Receive an SMS with a phone number and call to it.</td>
+  </tr>
+
+  <tr>
     <td  align=center>4708</td><td  align=left>[SMS] Receive an SMS with a phone number and store it.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>4711</td><td  align=left>[SMS] ** Diffrent numbers but same device! ** Send an SMS to multiple contacts.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5952</td><td  align=left>[SMS] CLONE - Try to send empty SMS.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5953</td><td  align=left>[SMS] CLONE - Introduce a valid SMS and click on Back option.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5954</td><td  align=left>[SMS] CLONE - Try to send SMS without any contact.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5955</td><td  align=left>[SMS] CLONE - Try to send an SMS when the introduced text has been deleted.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5957</td><td  align=left>[SMS] CLONE - Try to send an SMS when in the contact list window the end-user click on back (in contact list window) without selecting the contact.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5958</td><td  align=left>[SMS] CLONE - Send a new SMS using the option of reduced list of favourite contacts.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5959</td><td  align=left>[SMS] CLONE - Send a new SMS using the search option (in contact list window) in order to select an existing contact.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5960</td><td  align=left>[SMS] CLONE - Try to send a new SMS using the search option (in contact list window) in order to select an inexisting contact.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5968</td><td  align=left>[SMS] CLONE - Verify characters in text box above the keyboard when typing a sms.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5980</td><td  align=left>[SMS] CLONE - Verify that If the contact has no phone number, a message stating that contact does not have a phone number is open up, and user is returned the contact list.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5983</td><td  align=left>[SMS] (BLOCKED BY BUG 876641) CLONE - Press delete all text button in contact name field.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>5999</td><td  align=left>[SMS] CLONE - Access and exit edit mode.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6002</td><td  align=left>[SMS] CLONE - Press delete without any conversation selected.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6024</td><td  align=left>[SMS] CLONE - Verify The phone number displayed in a conversation.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6029</td><td  align=left>[SMS] CLONE - Verify the textfield item.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6030</td><td  align=left>[SMS] CLONE - Verify that the Carrier of number appears in the conversation head.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6031</td><td  align=left>[SMS] CLONE - Receive a text message from number XXX while we are in the conversation details with that number.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6032</td><td  align=left>[SMS] CLONE - Write and send a sms with line break.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6033</td><td  align=left>[SMS] CLONE - Write a sms with multiple spaces between words.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6037</td><td  align=left>[SMS] CLONE - Verify that If the name of the contact is not empty The name of the contact as the main header.</td>
+  </tr>
+
+  <tr>
+    <td  align=center>6038</td><td  align=left>[SMS] CLONE - Verify that If the name of the contact is not empty The type of the phone and the phone carrier (as defined in the address book) as the secondary header.</td>
   </tr>
 
   <tr>

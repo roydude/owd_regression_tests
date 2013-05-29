@@ -60,7 +60,7 @@ class test_19197(GaiaTestCase):
         #
         # Create and send a new test message.
         #
-        self.messages.createAndSendSMS(self.target_telNum, self._TestMsg)
+        self.messages.createAndSendSMS([self.target_telNum], self._TestMsg)
         
         #
         # Check the time of this message.

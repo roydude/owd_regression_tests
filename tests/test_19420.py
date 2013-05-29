@@ -67,8 +67,8 @@ class test_19420(GaiaTestCase):
         #
         newMsgBtn = self.UTILS.getElement(DOM.Messages.create_new_message_btn, "Create new message button")
         self.marionette.tap(newMsgBtn)
-        numInput = self.UTILS.getElement(DOM.Messages.target_number, "Target number field")
-        numInput.send_keys(self.target_telNum)
+        
+        self.messages.addNumberInToField(self.target_telNum)        
         self.messages.enterSMSMsg(self._TestMsg)
         
         # This wasn't always quick enough so I'm trying js to make it faster ...
