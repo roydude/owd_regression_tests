@@ -47,60 +47,60 @@ class test_6029(GaiaTestCase):
         # Launch messages app.
         #
         self.messages.launch()
-#         self.messages.deleteAllThreads()
-#  
-#         #
-#         # Send a message to create a thread (use number, not name as this
-#         # avoids some blocking bugs just now). 
-#         #
-#         self.messages.createAndSendSMS( [self.telNum], "Test 1")
-#         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-#  
-#         self.messages.enterSMSMsg("Test 2")
-#         self.messages.sendSMS()
-#         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-#          
-#         self.messages.enterSMSMsg("Test 3")
-#         self.messages.sendSMS()
-#         returnedSMS = self.messages.waitForReceivedMsgInThisThread()
-#          
-#         #
-#         # Leave this thread.
-#         #
-#         self.messages.closeThread()
-#         
-#         #
-#         # Enter the thread.
-#         #
+        self.messages.deleteAllThreads()
+  
+        #
+        # Send a message to create a thread (use number, not name as this
+        # avoids some blocking bugs just now). 
+        #
+        self.messages.createAndSendSMS( [self.telNum], "Test 1")
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+  
+        self.messages.enterSMSMsg("Test 2")
+        self.messages.sendSMS()
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+          
+        self.messages.enterSMSMsg("Test 3")
+        self.messages.sendSMS()
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
+          
+        #
+        # Leave this thread.
+        #
+        self.messages.closeThread()
+         
+        #
+        # Enter the thread.
+        #
         self.messages.openThread(self.telNum)
-#         
-#         #
-#         # Find the first message.
-#         #
-#         x = self.UTILS.getElements(DOM.Messages.thread_messages, "Thread messages", False)
-#         pos=0
-#         for i in x:
-#             if i.find_element("xpath", "//p[text()='Test 1']"):
-#                 break
-#             pos = pos + 1
-#             
-#         #
-#         # Now verify that the order is as expected.
-#         #
-#         self.checkMsg(x, pos, "Test 1", "outgoing")
-#         pos = pos + 1
-#         self.checkMsg(x, pos, "Test 1", "incoming")
-#         
-#         pos = pos + 1
-#         self.checkMsg(x, pos, "Test 2", "outgoing")
-#         pos = pos + 1
-#         self.checkMsg(x, pos, "Test 2", "incoming")
-# 
-#         pos = pos + 1
-#         self.checkMsg(x, pos, "Test 3", "outgoing")
-#         pos = pos + 1
-#         self.checkMsg(x, pos, "Test 3", "incoming")
-        
+         
+        #
+        # Find the first message.
+        #
+        x = self.UTILS.getElements(DOM.Messages.thread_messages, "Thread messages", False)
+        pos=0
+        for i in x:
+            if i.find_element("xpath", "//p[text()='Test 1']"):
+                break
+            pos = pos + 1
+
+        #
+        # Now verify that the order is as expected.
+        #
+        self.checkMsg(x, pos, "Test 1", "outgoing")
+        pos = pos + 1
+        self.checkMsg(x, pos, "Test 1", "incoming")
+         
+        pos = pos + 1
+        self.checkMsg(x, pos, "Test 2", "outgoing")
+        pos = pos + 1
+        self.checkMsg(x, pos, "Test 2", "incoming")
+ 
+        pos = pos + 1
+        self.checkMsg(x, pos, "Test 3", "outgoing")
+        pos = pos + 1
+        self.checkMsg(x, pos, "Test 3", "incoming")
+
         #
         # Tap the message area.
         #
@@ -111,7 +111,7 @@ class test_6029(GaiaTestCase):
         # Check the keyboard is now present.
         #
         self.marionette.switch_to_frame()
-        self.UTILS.waitForElements(DOM.GLOBAL.keyboard_iframe, "Keyboard iframe")
+        self.UTILS.switchToFrame(*DOM.GLOBAL.keyboard_iframe)
             
     def checkMsg(self, p_list, p_pos, p_str, p_direction):
         #
