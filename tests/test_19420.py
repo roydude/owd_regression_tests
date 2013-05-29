@@ -94,6 +94,7 @@ class test_19420(GaiaTestCase):
         #
         # TEST: The returned message is as expected (caseless in case user typed it manually).
         #
+        returnedSMS = self.messages.waitForReceivedMsgInThisThread()
         sms_text = returnedSMS.text
         self.UTILS.TEST((sms_text.lower() == self._TestMsg.lower()), 
             "SMS text = '" + self._TestMsg + "' (it was '" + sms_text + "').")
