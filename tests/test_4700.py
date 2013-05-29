@@ -70,22 +70,13 @@ class test_4700(GaiaTestCase):
         #
         x = self.messages.waitForReceivedMsgInThisThread()
         x.find_element("tag name", "a").click()
-        
-        #
-        # Switch to the top level frame and select browser
-        # from the popup dialog.
-        #
-        time.sleep(1)
-        self.marionette.switch_to_frame()
-        
-        x = self.UTILS.getElement( ("xpath", "//a[text()='Browser']"), "Browser button", True, 5, False)
-        x.click()
                 
         #
         # Give the browser time to start up, then
         # switch to the browser frame and check the page loaded.
         #
         time.sleep(2)
+        self.marionette.switch_to_frame()
         self.UTILS.switchToFrame(*DOM.Browser.frame_locator)
         
         self.UTILS.TEST(self.browser.check_page_loaded(self._link),
